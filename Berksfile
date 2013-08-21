@@ -15,5 +15,6 @@ cookbook 'monitoring-tlq', git: 'git@github.com:TalkingQuickly/monitoring-tlq-.g
 cookbook 'rails_gem_dependencies-tlq', git: 'git@github.com:TalkingQuickly/rails_gem_dependencies-tlq.git'
 
 cookbook 'mysql', git: 'https://github.com/opscode-cookbooks/mysql'
-cookbook 'tlq-nginx', git: 'git@github.com:TalkingQuickly/nginx-tlq.git'
+cookbook 'nginx-tlq', git: 'git@github.com:TalkingQuickly/nginx-tlq.git'
 cookbook 'rbenv', git: 'https://github.com/fnichol/chef-rbenv'
+cookbook 'postgresql', git: 'git@github.com:opscode-cookbooks/postgresql.git'

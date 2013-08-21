@@ -1,25 +1,24 @@
 {
-  "sha": "89433c506ee64e5104c7c1973de639241eb5d8f8",
   "sources": {
     "build-essential": {
       "locked_version": "1.4.1",
       "git": "https://github.com/opscode-cookbooks/build-essential",
-      "ref": "31d74e5b374dccadfa1016cefb604b7cc9204975"
+      "ref": "2991fc6e5448e5b2378eb6882e9c1ce557d828f0"
     },
     "sudo": {
-      "locked_version": "2.1.3",
+      "locked_version": "2.1.5",
       "git": "https://github.com/opscode-cookbooks/sudo.git",
-      "ref": "7eb50f591ca5eef5b706f447c942b2caa169b819"
+      "ref": "a503303c8df8e832de5252169f4c02540b46667c"
     },
     "basic-security-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/basic_security-tlq.git",
-      "ref": "fcdeb90d6f3f4fbc101bbbcf44c5d491b9f6439e"
+      "ref": "bf4b30c535930c418c70b7e4a2ba8faf2c770f10"
     },
     "look-and-feel-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/look_and_feel-tlq.git",
-      "ref": "0d3e9fcf09e1db71879e999b16d2a00b603956ad"
+      "ref": "32928a7ddafe7eae76265811d599680620cc072c"
     },
     "users": {
       "locked_version": "1.5.1",
@@ -29,7 +28,7 @@
     "chef-solo-search": {
       "locked_version": "0.4.0",
       "git": "https://github.com/edelight/chef-solo-search",
-      "ref": "1f79c1d86e85aa3a2b01e15f90755cf60eb66a4f"
+      "ref": "a28e7f25ab4afb53f9a55dd49d8b1277d0374c29"
     },
     "memcached-tlq": {
       "locked_version": "0.0.1",
@@ -66,7 +65,7 @@
       "git": "https://github.com/opscode-cookbooks/mysql",
       "ref": "eef7e65806e7ff3bdbe148e27c447ef4a8bc3881"
     },
-    "tlq-nginx": {
+    "nginx-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/nginx-tlq.git",
       "ref": "f28dbe6d19f161e4a9ec2400b1e87b42ffaa64d3"
@@ -76,6 +75,11 @@
       "git": "https://github.com/fnichol/chef-rbenv",
       "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
     },
+    "postgresql": {
+      "locked_version": "3.0.3",
+      "git": "git@github.com:opscode-cookbooks/postgresql.git",
+      "ref": "3c2bb19bca12953cf2ed6a2f0621670ff1455f9d"
+    },
     "openssl": {
       "locked_version": "1.0.2"
     },
@@ -83,14 +87,16 @@
       "locked_version": "0.8.0"
     },
     "java": {
-      "locked_version": "1.11.6",
-      "constraint": "> 1.4.0"
+      "locked_version": "1.11.6"
     },
     "windows": {
       "locked_version": "1.10.0"
     },
     "chef_handler": {
       "locked_version": "1.1.4"
+    },
+    "apt": {
+      "locked_version": "2.1.0"
     }
   }
 }

@@ -6,7 +6,7 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "postgres"
+      "postgresql"
    ],
    "chef_type": "role"
 }

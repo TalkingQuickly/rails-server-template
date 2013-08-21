@@ -1,2 +1,3 @@
 data_bags/users/*.json
 cookbooks/**/*
+nodes/*.json
