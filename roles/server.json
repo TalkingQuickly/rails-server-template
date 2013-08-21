@@ -1,0 +1,61 @@
+// Things we want standard on all server boxes, primarily:
+// - Security
+// - Look and feel
+// - default users, groups etc
+{
+  "name": "server",
+  "description": "A server of some kind...",
+  "default_attributes": {
+    "authorization": {
+      "sudo": {
+        // everyone in the group sysadmin gets sudo rights
+        "groups": ["sysadmin"],
+        // the deploy user specifically gets sudo rights
+        "users": ["deploy"],
+        // whether a user with sudo rights has to enter their
+        // password when using sudo
+        "passwordless": "true"
+      },
+      "firewall_allow":[]
+    },
+    "monit": {
+      // which lucky person gets monit emails if enabled
+      "notify_emails" : ["user@example.com"],
+      // enable ot disable monit emails
+      "enable_emails" : true,
+      "web_interface" : {
+        // access credentials for the web interface. Just
+        // enabling this won't set up the web interface,
+        // it will need either a vhost in nginx os its port
+        // being allowed through ufw
+        "allow" : ["username","password"]
+      }
+    }
+  },
+  "json_class": "Chef::Role",
+  "run_list": [
+    // because secure passwords are nice
+    "openssl",
+    // for building things
+    "build-essential",
+    // this is needed for users to work
+    "chef-solo-search",
+    // setup standard sys admin users
+    "users::sysadmins",
+    // make sure deploy user has sudo rights
+    "sudo",
+    // lock down ssh, install firewall etc
+    "basic-security-tlq",
+    // get monit up and running (config is down to
+    // individual apps/ a separate recipe)    "monitoring",
+    // make the server look pretty
+    "look-and-feel-tlq"
+    // get monit up and running (config is down to
+    // individual apps/ a separate recipe)
+    "monitoring-tlq",
+  ],
+  "chef_type": "role",
+  "override_attributes": {
+  }
+}
+

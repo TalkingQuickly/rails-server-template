@@ -1,0 +1,29 @@
+{
+  "environment":"production",
+  "rbenv":{
+    "rubies": [
+      "1.9.3-p286"
+    ],
+    "global" : "1.9.3-p286",
+    "gems": {
+      "1.9.3-p286" : [
+        {"name":"bundler"}
+      ]
+    }
+  },
+  "monit": {
+      "notify_email" : "email@example.com",
+      "enable_emails" : true,
+      "web_interface" : {
+        "allow" : ["username","password"]
+      }
+    },
+  "run_list":
+  [
+    "role[server]",
+    "role[nginx]",
+    "role[post-server]",
+    "role[rails-app]",
+    "role[redis-server]"
+  ]
+}

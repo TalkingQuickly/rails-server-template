@@ -1,0 +1,12 @@
+{
+   "name": "postgres-server",
+   "description": "Postgres database server",
+   "default_attributes": {
+
+   },
+   "json_class": "Chef::Role",
+   "run_list": [
+      "postgres"
+   ],
+   "chef_type": "role"
+}

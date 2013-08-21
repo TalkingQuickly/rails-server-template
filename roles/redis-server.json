@@ -1,0 +1,13 @@
+{
+   "name": "redis-server",
+   "description": "Redis server",
+   "default_attributes": {
+
+   },
+   "json_class": "Chef::Role",
+   "run_list": [
+      "redis-tlq",
+      "monit_configs-tlq::redis-server"
+   ],
+   "chef_type": "role"
+}

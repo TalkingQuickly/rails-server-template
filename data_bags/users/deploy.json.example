@@ -1,0 +1,11 @@
+{
+  "id": "deploy",
+  // generate this with: openssl passwd -1 "plaintextpassword"
+  "password": "",
+  // the below should contain a list of ssh public keys which should
+  // be able to login as deploy
+  "ssh_keys": [
+  ],
+  "groups": [ "sysadmin"],
+  "shell": "\/bin\/bash"
+}

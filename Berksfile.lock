@@ -1,0 +1,96 @@
+{
+  "sha": "89433c506ee64e5104c7c1973de639241eb5d8f8",
+  "sources": {
+    "build-essential": {
+      "locked_version": "1.4.1",
+      "git": "https://github.com/opscode-cookbooks/build-essential",
+      "ref": "31d74e5b374dccadfa1016cefb604b7cc9204975"
+    },
+    "sudo": {
+      "locked_version": "2.1.3",
+      "git": "https://github.com/opscode-cookbooks/sudo.git",
+      "ref": "7eb50f591ca5eef5b706f447c942b2caa169b819"
+    },
+    "basic-security-tlq": {
+      "locked_version": "0.0.1",
+      "git": "git@github.com:TalkingQuickly/basic_security-tlq.git",
+      "ref": "fcdeb90d6f3f4fbc101bbbcf44c5d491b9f6439e"
+    },
+    "look-and-feel-tlq": {
+      "locked_version": "0.0.1",
+      "git": "git@github.com:TalkingQuickly/look_and_feel-tlq.git",
+      "ref": "0d3e9fcf09e1db71879e999b16d2a00b603956ad"
+    },
+    "users": {
+      "locked_version": "1.5.1",
+      "git": "https://github.com/opscode-cookbooks/users.git",
+      "ref": "fabf756527286c40a6f1811c97e4f16d4e37d217"
+    },
+    "chef-solo-search": {
+      "locked_version": "0.4.0",
+      "git": "https://github.com/edelight/chef-solo-search",
+      "ref": "1f79c1d86e85aa3a2b01e15f90755cf60eb66a4f"
+    },
+    "memcached-tlq": {
+      "locked_version": "0.0.1",
+      "git": "git@github.com:TalkingQuickly/memcached-tlq.git",
+      "ref": "09d17381e27979ff367f712697d7a53055e3f20c"
+    },
+    "mongo-tlq": {
+      "locked_version": "0.0.1",
+      "git": "git@github.com:TalkingQuickly/mongo-tlq.git",
+      "ref": "9e652de196cac937a1e8e9bc5ccdf2c9422f230e"
+    },
+    "redis-tlq": {
+      "locked_version": "0.0.1",
+      "git": "git@github.com:TalkingQuickly/redis-tlq.git",
+      "ref": "a49a8f5832d82b857d7a0b39569f6f960bf70070"
+    },
+    "monit_configs-tlq": {
+      "locked_version": "0.0.1",
+      "git": "git@github.com:TalkingQuickly/monit_configs-tlq.git",
+      "ref": "28aa8e57fe44b10ea71055f1dc3d6dbf04c517b2"
+    },
+    "monitoring-tlq": {
+      "locked_version": "0.0.0",
+      "git": "git@github.com:TalkingQuickly/monitoring-tlq-.git",
+      "ref": "1d06f84d0d2828a654c4585659307530fd0a6aa1"
+    },
+    "rails_gem_dependencies-tlq": {
+      "locked_version": "0.0.1",
+      "git": "git@github.com:TalkingQuickly/rails_gem_dependencies-tlq.git",
+      "ref": "213f5d2ecf1be5d0778414164e84d29166443f44"
+    },
+    "mysql": {
+      "locked_version": "3.0.3",
+      "git": "https://github.com/opscode-cookbooks/mysql",
+      "ref": "eef7e65806e7ff3bdbe148e27c447ef4a8bc3881"
+    },
+    "tlq-nginx": {
+      "locked_version": "0.0.1",
+      "git": "git@github.com:TalkingQuickly/nginx-tlq.git",
+      "ref": "f28dbe6d19f161e4a9ec2400b1e87b42ffaa64d3"
+    },
+    "rbenv": {
+      "locked_version": "0.7.3",
+      "git": "https://github.com/fnichol/chef-rbenv",
+      "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
+    },
+    "openssl": {
+      "locked_version": "1.0.2"
+    },
+    "ruby_build": {
+      "locked_version": "0.8.0"
+    },
+    "java": {
+      "locked_version": "1.11.6",
+      "constraint": "> 1.4.0"
+    },
+    "windows": {
+      "locked_version": "1.10.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "rails-app",
+  "description": "Something which runs rails apps.",
+  "default_attributes": {
+    "rbenv":{
+      "rubies": [
+        "1.9.2-p320"
+      ],
+      "global" : "1.9.2-p320",
+      "gems": {
+        "1.9.2-p320" : [
+          {"name":"bundler"}
+        ]
+      }
+    }
+
+  },
+  "json_class": "Chef::Role",
+  "run_list": [
+    "rails_gem_dependencies",
+    "ruby_build",
+    "rbenv::system"
+  ],
+  "chef_type": "role",
+  "override_attributes": {
+  }
+}
