@@ -18,6 +18,11 @@
         "allow" : ["username","password"]
       }
     },
+    "postgresql" : {
+      "password" : {
+        "postgres" : ""
+      }
+    },
   "run_list":
   [
     "role[server]",
