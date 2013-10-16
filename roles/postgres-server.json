@@ -6,7 +6,8 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "postgres"
+      "postgresql::server",
+      "monit_configs-tlq::postgres"
    ],
    "chef_type": "role"
 }
