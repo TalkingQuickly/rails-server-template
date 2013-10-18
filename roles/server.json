@@ -15,9 +15,10 @@
         // whether a user with sudo rights has to enter their
         // password when using sudo
         "passwordless": "false"
-      },
-      "firewall_allow":[]
+      }
+      
     },
+    "firewall_allow":[],
     "monit": {
       // which lucky person gets monit emails if enabled
       "notify_emails" : ["user@example.com"],
