@@ -14,7 +14,7 @@
         "users": ["deploy"],
         // whether a user with sudo rights has to enter their
         // password when using sudo
-        "passwordless": "true"
+        "passwordless": "false"
       },
       "firewall_allow":[]
     },
