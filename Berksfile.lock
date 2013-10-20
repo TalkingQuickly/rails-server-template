@@ -6,9 +6,9 @@
       "ref": "7f4d351036f10e7b641e1df137390491d6111669"
     },
     "sudo": {
-      "locked_version": "2.2.1",
+      "locked_version": "2.2.3",
       "git": "https://github.com/opscode-cookbooks/sudo.git",
-      "ref": "f25558adc435f71729c0496dcc3d0924184d1544"
+      "ref": "6a616bcf0c7e26918103bca976064996dcd08350"
     },
     "basic-security-tlq": {
       "locked_version": "0.0.1",
@@ -18,12 +18,12 @@
     "look-and-feel-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/look_and_feel-tlq.git",
-      "ref": "32928a7ddafe7eae76265811d599680620cc072c"
+      "ref": "5c8007ed1c8adf6ccf085a67c6059fdac3c27415"
     },
     "users": {
-      "locked_version": "1.5.3",
+      "locked_version": "1.6.1",
       "git": "https://github.com/opscode-cookbooks/users.git",
-      "ref": "6e7976870225df2eeeb291827c5099513dbfe3d6"
+      "ref": "d9369161fb3b5a73cbb75597a01fa80f338b53be"
     },
     "chef-solo-search": {
       "locked_version": "0.5.1",
@@ -43,17 +43,17 @@
     "redis-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/redis-tlq.git",
-      "ref": "a49a8f5832d82b857d7a0b39569f6f960bf70070"
+      "ref": "eaaafe37878f219fb65eef71507eb356ca057ddb"
     },
     "monit_configs-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/monit_configs-tlq.git",
-      "ref": "01ab583438ec91a344cda959b0d4988b5298bd71"
+      "ref": "a36bebb930cab7feca5d9d4d6343fa4c6b2e64a5"
     },
-    "monitoring-tlq": {
+    "monit-tlq": {
       "locked_version": "0.0.0",
-      "git": "git@github.com:TalkingQuickly/monitoring-tlq-.git",
-      "ref": "1d06f84d0d2828a654c4585659307530fd0a6aa1"
+      "git": "git@github.com:TalkingQuickly/monit-tlq.git",
+      "ref": "cca8d0c37eb4077aa5ad013f05d4eb462ecb11cf"
     },
     "rails_gem_dependencies-tlq": {
       "locked_version": "0.0.1",
@@ -61,9 +61,9 @@
       "ref": "213f5d2ecf1be5d0778414164e84d29166443f44"
     },
     "mysql": {
-      "locked_version": "3.0.5",
+      "locked_version": "3.0.13",
       "git": "https://github.com/opscode-cookbooks/mysql",
-      "ref": "bc42cfb0d54d50e3181b40739e67e0a353650661"
+      "ref": "dae0f7d8efa62f515c8fcdd5164aef30961ee023"
     },
     "nginx-tlq": {
       "locked_version": "0.0.1",
@@ -76,27 +76,30 @@
       "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
     },
     "postgresql": {
-      "locked_version": "3.0.5",
+      "locked_version": "3.1.1",
       "git": "git@github.com:opscode-cookbooks/postgresql.git",
-      "ref": "665b3d0f4620c28108ffec8a89b1f9af300a977d"
+      "ref": "d0ae7eff0db5b6fc05411eb5bac6ea1614838da9"
     },
     "openssl": {
-      "locked_version": "1.0.2"
+      "locked_version": "1.1.0"
     },
     "ruby_build": {
       "locked_version": "0.8.0"
     },
     "java": {
-      "locked_version": "1.11.6"
+      "locked_version": "1.14.0"
     },
     "windows": {
-      "locked_version": "1.10.0"
+      "locked_version": "1.11.0"
     },
     "chef_handler": {
       "locked_version": "1.1.4"
     },
+    "aws": {
+      "locked_version": "0.101.6"
+    },
     "apt": {
-      "locked_version": "2.1.0"
+      "locked_version": "2.2.1"
     }
   }
 }
