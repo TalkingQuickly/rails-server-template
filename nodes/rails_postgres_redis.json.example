@@ -17,14 +17,12 @@
       "web_interface" : {
         "allow" : ["username","password"]
       },
-      {
-        "mailserver" : {
-          "host" : "mailserver.example.com",
-          "port" : "999",
-          "username" : "your_username",
-          "password" : "your_password",
-          "hostname" : "the_hostname"
-        }
+      "mailserver" : {
+        "host" : "mailserver.example.com",
+        "port" : "999",
+        "username" : "your_username",
+        "password" : "your_password",
+        "hostname" : "the_hostname"
       }
     },
     "postgresql" : {
