@@ -14,10 +14,11 @@
         "users": ["deploy"],
         // whether a user with sudo rights has to enter their
         // password when using sudo
-        "passwordless": "true"
-      },
-      "firewall_allow":[]
+        "passwordless": "false"
+      }
+      
     },
+    "firewall_allow":[],
     "monit": {
       // which lucky person gets monit emails if enabled
       "notify_emails" : ["user@example.com"],
