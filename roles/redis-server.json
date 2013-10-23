@@ -2,7 +2,9 @@
    "name": "redis-server",
    "description": "Redis server",
    "default_attributes": {
-
+      "redis": {
+          "dont_bind" : false
+       }
    },
    "json_class": "Chef::Role",
    "run_list": [
