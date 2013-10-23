@@ -18,7 +18,7 @@
     "look-and-feel-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/look_and_feel-tlq.git",
-      "ref": "5c8007ed1c8adf6ccf085a67c6059fdac3c27415"
+      "ref": "190381f78a2a6a2ab0a3b78d161bc72779cf5ebc"
     },
     "users": {
       "locked_version": "1.6.1",
