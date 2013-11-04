@@ -13,17 +13,17 @@
     "basic-security-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/basic_security-tlq.git",
-      "ref": "bf4b30c535930c418c70b7e4a2ba8faf2c770f10"
+      "ref": "b40c3aa3a924903650dc05c9e0a53aaf46e5cc56"
     },
     "look-and-feel-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/look_and_feel-tlq.git",
-      "ref": "190381f78a2a6a2ab0a3b78d161bc72779cf5ebc"
+      "ref": "bf3b58e4233af1455a615f66a61cd104d43415b6"
     },
     "users": {
       "locked_version": "1.6.1",
       "git": "https://github.com/opscode-cookbooks/users.git",
-      "ref": "d9369161fb3b5a73cbb75597a01fa80f338b53be"
+      "ref": "d5a1a741e15b56c770a037f341495e29ac753e1b"
     },
     "chef-solo-search": {
       "locked_version": "0.5.1",
@@ -43,17 +43,17 @@
     "redis-tlq": {
       "locked_version": "0.0.1",
       "git": "git@github.com:TalkingQuickly/redis-tlq.git",
-      "ref": "eaaafe37878f219fb65eef71507eb356ca057ddb"
+      "ref": "ae811bf8f8e501338a277f4a80ae793cf17782d7"
     },
     "monit_configs-tlq": {
-      "locked_version": "0.0.1",
+      "locked_version": "0.0.4",
       "git": "git@github.com:TalkingQuickly/monit_configs-tlq.git",
-      "ref": "a36bebb930cab7feca5d9d4d6343fa4c6b2e64a5"
+      "ref": "d0989ae2315551068900c0bd60fe878d188d8814"
     },
     "monit-tlq": {
-      "locked_version": "0.0.0",
+      "locked_version": "0.3.4",
       "git": "git@github.com:TalkingQuickly/monit-tlq.git",
-      "ref": "cca8d0c37eb4077aa5ad013f05d4eb462ecb11cf"
+      "ref": "f5b9cbffe004ad40caff2d4758c166ae67363a36"
     },
     "rails_gem_dependencies-tlq": {
       "locked_version": "0.0.1",
@@ -61,9 +61,9 @@
       "ref": "213f5d2ecf1be5d0778414164e84d29166443f44"
     },
     "mysql": {
-      "locked_version": "3.0.13",
+      "locked_version": "4.0.1",
       "git": "https://github.com/opscode-cookbooks/mysql",
-      "ref": "dae0f7d8efa62f515c8fcdd5164aef30961ee023"
+      "ref": "a8b6a631e9e5c085f461e32a001c77debaa47aa1"
     },
     "nginx-tlq": {
       "locked_version": "0.0.1",

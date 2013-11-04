@@ -53,7 +53,8 @@
     "look-and-feel-tlq",
     // get monit up and running (config is down to
     // individual apps/ a separate recipe)
-    "monit-tlq"
+    "monit-tlq",
+    "monit_configs-tlq::system"
   ],
   "chef_type": "role",
   "override_attributes": {
