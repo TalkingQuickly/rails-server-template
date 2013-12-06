@@ -61,14 +61,14 @@
       "ref": "213f5d2ecf1be5d0778414164e84d29166443f44"
     },
     "mysql": {
-      "locked_version": "4.0.1",
+      "locked_version": "4.0.7",
       "git": "https://github.com/opscode-cookbooks/mysql",
-      "ref": "a8b6a631e9e5c085f461e32a001c77debaa47aa1"
+      "ref": "b2ff63cac87c8e2097075730165c1d6ca0dd5d57"
     },
     "nginx-tlq": {
-      "locked_version": "0.0.1",
+      "locked_version": "0.0.2",
       "git": "git@github.com:TalkingQuickly/nginx-tlq.git",
-      "ref": "f28dbe6d19f161e4a9ec2400b1e87b42ffaa64d3"
+      "ref": "b614ed2366f7cb3fe07f108fdf65d21af1076512"
     },
     "rbenv": {
       "locked_version": "0.7.3",
@@ -76,9 +76,9 @@
       "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
     },
     "postgresql": {
-      "locked_version": "3.1.1",
+      "locked_version": "3.2.1",
       "git": "git@github.com:opscode-cookbooks/postgresql.git",
-      "ref": "d0ae7eff0db5b6fc05411eb5bac6ea1614838da9"
+      "ref": "cb147ab323f43172ebcbaea0808c5f9f4a3b0402"
     },
     "openssl": {
       "locked_version": "1.1.0"
