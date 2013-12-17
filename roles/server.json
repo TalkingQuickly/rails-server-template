@@ -22,8 +22,15 @@
     "monit": {
       // which lucky person gets monit emails if enabled
       "notify_emails" : ["user@example.com"],
-      // enable ot disable monit emails
-      "enable_emails" : true,
+      // enable or disable monit emails
+      "enable_emails" : false,
+      "mailserver" : {
+        "host" : "your-server",
+        "port" : "587",
+        "username" : "yourusername",
+        "password" : "yourpassword",
+        "hostname" : "yourhostname"
+      },
       "web_interface" : {
         // access credentials for the web interface. Just
         // enabling this won't set up the web interface,
