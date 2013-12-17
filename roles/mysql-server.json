@@ -11,7 +11,8 @@
             // remove the anonymous testing users
             "remove_anonymous_users":true,
             // override the package definitions to get
-            // the ones we need for rails
+            // the ones we need for rails. @todo: override this
+            // in rails-app not here.
             "client": {
               "packages": ["mysql-client", "libmysqlclient-dev","ruby-mysql"]
             },
