@@ -54,8 +54,6 @@
     "sudo",
     // lock down ssh, install firewall etc
     "basic-security-tlq",
-    // get monit up and running (config is down to
-    // individual apps/ a separate recipe)    "monitoring",
     // make the server look pretty
     "look-and-feel-tlq",
     // get monit up and running (config is down to
