@@ -1,5 +1,14 @@
 {
   "environment":"production",
+  "authorization": {
+      "sudo": {
+        // the deploy user specifically gets sudo rights
+        // if you're using vagrant it's worth adding "vagrant"
+        // to this array
+        "users": ["deploy"]
+      }
+      
+    },
   "rbenv":{
     "rubies": [
       "1.9.3-p286"
@@ -12,7 +21,7 @@
     }
   },
   "monit": {
-      "notify_email" : "email@example.com",
+      "notify_email" : ["email@example.com"],
       "enable_emails" : false,
       "web_interface" : {
         "allow" : ["username","password"]
