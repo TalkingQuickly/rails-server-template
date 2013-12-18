@@ -13,7 +13,7 @@
   },
   "monit": {
       "notify_email" : "email@example.com",
-      "enable_emails" : true,
+      "enable_emails" : false,
       "web_interface" : {
         "allow" : ["username","password"]
       },
