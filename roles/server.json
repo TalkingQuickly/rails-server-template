@@ -36,7 +36,7 @@
         // enabling this won't set up the web interface,
         // it will need either a vhost in nginx os its port
         // being allowed through ufw
-        "allow" : ["username","password"]
+        "allow" : ["yourusername","yourpassword"]
       }
     },
     "monit_address" : "monit.devops.local"
