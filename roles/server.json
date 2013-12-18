@@ -39,7 +39,7 @@
         "allow" : ["username","password"]
       }
     },
-    "monit_address" : "monit.devops.local",
+    "monit_address" : "monit.devops.local"
   },
   "json_class": "Chef::Role",
   "run_list": [
