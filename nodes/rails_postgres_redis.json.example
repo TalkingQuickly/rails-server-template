@@ -24,7 +24,7 @@
       "notify_email" : ["email@example.com"],
       "enable_emails" : false,
       "web_interface" : {
-        "allow" : ["username","password"]
+        "allow" : ["your_username","your_password"]
       },
       "mailserver" : {
         "host" : "mailserver.example.com",
