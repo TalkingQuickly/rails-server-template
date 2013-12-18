@@ -38,7 +38,8 @@
         // being allowed through ufw
         "allow" : ["username","password"]
       }
-    }
+    },
+    "monit_address" : "monit.devops.local",
   },
   "json_class": "Chef::Role",
   "run_list": [
