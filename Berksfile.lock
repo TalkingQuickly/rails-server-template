@@ -41,9 +41,9 @@
       "ref": "11736b711346d8d23f7f520d48a56b480e707e94"
     },
     "redis-tlq": {
-      "locked_version": "0.0.4",
+      "locked_version": "0.0.6",
       "git": "git@github.com:TalkingQuickly/redis-tlq.git",
-      "ref": "276e385f67f207fb3bda24813142ae4085121627"
+      "ref": "0fd9ee3dcc7bd01f37e2e057b146595a7849e6aa"
     },
     "monit_configs-tlq": {
       "locked_version": "0.0.5",
@@ -66,9 +66,9 @@
       "ref": "b2ff63cac87c8e2097075730165c1d6ca0dd5d57"
     },
     "nginx-tlq": {
-      "locked_version": "0.0.2",
+      "locked_version": "0.0.3",
       "git": "git@github.com:TalkingQuickly/nginx-tlq.git",
-      "ref": "331eb507a1f272664a2b772d431d83fdd46d52d3"
+      "ref": "a391d9456a8ae40f1134f70458a3ff0bf25523b1"
     },
     "rbenv": {
       "locked_version": "0.7.3",
