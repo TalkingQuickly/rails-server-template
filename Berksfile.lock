@@ -66,9 +66,9 @@
       "ref": "b2ff63cac87c8e2097075730165c1d6ca0dd5d57"
     },
     "nginx-tlq": {
-      "locked_version": "0.0.3",
+      "locked_version": "0.0.4",
       "git": "git@github.com:TalkingQuickly/nginx-tlq.git",
-      "ref": "a391d9456a8ae40f1134f70458a3ff0bf25523b1"
+      "ref": "863f0faadbc5c61e925cb7de10dba97fc695fa89"
     },
     "rbenv": {
       "locked_version": "0.7.3",
