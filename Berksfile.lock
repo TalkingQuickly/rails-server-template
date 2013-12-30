@@ -6,9 +6,9 @@
       "ref": "7f4d351036f10e7b641e1df137390491d6111669"
     },
     "sudo": {
-      "locked_version": "2.2.3",
+      "locked_version": "2.3.1",
       "git": "https://github.com/opscode-cookbooks/sudo.git",
-      "ref": "6a616bcf0c7e26918103bca976064996dcd08350"
+      "ref": "84d6b4b758b107623a15312ef439c39e3e6d18a7"
     },
     "basic-security-tlq": {
       "locked_version": "0.0.1",
@@ -28,7 +28,7 @@
     "chef-solo-search": {
       "locked_version": "0.5.1",
       "git": "https://github.com/edelight/chef-solo-search",
-      "ref": "681f78a108f5f8a3655551b32d9939603628c568"
+      "ref": "63d6d016be9df48c3692dfd5b1e51820b2a3ac54"
     },
     "memcached-tlq": {
       "locked_version": "0.0.2",
@@ -61,9 +61,9 @@
       "ref": "213f5d2ecf1be5d0778414164e84d29166443f44"
     },
     "mysql": {
-      "locked_version": "4.0.7",
+      "locked_version": "4.0.15",
       "git": "https://github.com/opscode-cookbooks/mysql",
-      "ref": "b2ff63cac87c8e2097075730165c1d6ca0dd5d57"
+      "ref": "ea013a55d2cfda5a1e4ed4c7f063485d60c39a98"
     },
     "nginx-tlq": {
       "locked_version": "0.0.4",
