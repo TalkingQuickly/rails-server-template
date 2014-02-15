@@ -1,3 +1,10 @@
+PATH
+  remote: ./cli
+  specs:
+    cli (0.0.1)
+      thor
+      user_config
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -170,6 +177,7 @@ GEM
     thor (0.18.1)
     timers (2.0.0)
       hitimes
+    user_config (0.0.4)
     uuidtools (2.1.4)
     varia_model (0.3.2)
       buff-extensions (~> 0.2)
@@ -193,4 +201,5 @@ DEPENDENCIES
   berkshelf (~> 2.0.14)
   chef (~> 11.10.0)
   chef-zero (= 1.7.2)
+  cli!
   knife-solo (= 0.3.0)

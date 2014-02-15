@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "cli/cli.rb"
+
+Cli::CLI.start

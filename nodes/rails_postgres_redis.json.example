@@ -24,19 +24,19 @@
       "notify_email" : ["email@example.com"],
       "enable_emails" : false,
       "web_interface" : {
-        "allow" : ["your_username","your_password"]
+        "allow" : ["MONIT_USERNAME","MONIT_PASSWORD"]
       },
       "mailserver" : {
-        "host" : "mailserver.example.com",
+        "host" : "MAILSERVER_ADDRESS",
         "port" : "999",
-        "username" : "your_username",
-        "password" : "your_password",
-        "hostname" : "the_hostname"
+        "username" : "MAILSERVER_USERNAME",
+        "password" : "MAILSERVER_PASSWORD",
+        "hostname" : "MAILSERVER_HOSTNAME"
       }
     },
     "postgresql" : {
       "password" : {
-        "postgres" : ""
+        "postgres" : "POSTGRES_PASSWORD"
       }
     },
   "run_list":
