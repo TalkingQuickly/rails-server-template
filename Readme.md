@@ -8,13 +8,6 @@ but don't want to use a SaaS platform such as Heroku.
 
 ## Documentation
 
-Currently working on a detailed tutorial for using chef to provision
-rails app servers, I tend to prioritise based on feedback I get on
-demand so if it's something you'd like to see, let me know by email 
-ben@talkingquickly.co.uk or twitter @talkingquickly
+This is the example code which section one of the book "Reliably Deploying Rails Applications" available from leanpub here <https://leanpub.com/deploying_rails_applications> is based.
 
-The first draft of the tutorial is available at;
-
-http://www.talkingquickly.co.uk/2013/09/using-chef-to-provision-a-rails-and-postgres-server/
-
-Until I get around to a new Readme.
+If you run into any issues using the template provided here, please open a Github issue, I actively monitor these and will respond as quickly as possible.
