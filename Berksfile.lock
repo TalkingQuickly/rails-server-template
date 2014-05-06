@@ -1,9 +1,9 @@
 {
   "sources": {
     "build-essential": {
-      "locked_version": "2.0.1",
+      "locked_version": "2.0.3",
       "git": "git://github.com/opscode-cookbooks/build-essential.git",
-      "ref": "830a2b8b8bc09df05b4a6eb4eda23c0e683e4b90"
+      "ref": "cb9201a6cf57e15c4995303f7e4df2dea462c3a6"
     },
     "sudo": {
       "locked_version": "2.5.3",
@@ -51,19 +51,19 @@
       "ref": "f3fb019500fb78b281bdf3a4dfba8a1161effcae"
     },
     "monit-tlq": {
-      "locked_version": "0.3.5",
+      "locked_version": "0.3.6",
       "git": "git://github.com/TalkingQuickly/monit-tlq.git",
-      "ref": "30ea75cf7728f36f553a4b22db831c70b4ffcee8"
+      "ref": "1418ab881e7119b59de9c0722b58faefa5e765be"
     },
     "rails_gem_dependencies-tlq": {
-      "locked_version": "0.0.1",
+      "locked_version": "0.0.2",
       "git": "git://github.com/TalkingQuickly/rails_gem_dependencies-tlq.git",
-      "ref": "213f5d2ecf1be5d0778414164e84d29166443f44"
+      "ref": "86d443f34b93f59dc7a4ed7e51f46a42b2c79eb1"
     },
     "mysql": {
-      "locked_version": "5.2.3",
+      "locked_version": "5.2.5",
       "git": "git://github.com/opscode-cookbooks/mysql.git",
-      "ref": "5ad63148bf74d75fb6c33e4fff3b60009e6e9cad"
+      "ref": "a46b4d846ce0b7e4aa34402cafdef6abacc5e03d"
     },
     "nginx-tlq": {
       "locked_version": "0.0.4",
@@ -84,7 +84,7 @@
       "locked_version": "0.8.0"
     },
     "java": {
-      "locked_version": "1.22.0"
+      "locked_version": "1.19.2"
     },
     "apt": {
       "locked_version": "2.3.8"
