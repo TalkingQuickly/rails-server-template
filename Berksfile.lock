@@ -1,96 +1,84 @@
-{
-  "sources": {
-    "build-essential": {
-      "locked_version": "2.0.3",
-      "git": "git://github.com/opscode-cookbooks/build-essential.git",
-      "ref": "cb9201a6cf57e15c4995303f7e4df2dea462c3a6"
-    },
-    "sudo": {
-      "locked_version": "2.5.3",
-      "git": "git://github.com/opscode-cookbooks/sudo.git",
-      "ref": "d2902b4d6ea6fe2cf175d1921f0cb96b84e089bd"
-    },
-    "basic-security-tlq": {
-      "locked_version": "0.0.1",
-      "git": "git://github.com/TalkingQuickly/basic_security-tlq.git",
-      "ref": "b40c3aa3a924903650dc05c9e0a53aaf46e5cc56"
-    },
-    "look-and-feel-tlq": {
-      "locked_version": "0.0.1",
-      "git": "git://github.com/TalkingQuickly/look_and_feel-tlq.git",
-      "ref": "bf3b58e4233af1455a615f66a61cd104d43415b6"
-    },
-    "users": {
-      "locked_version": "1.7.1",
-      "git": "git://github.com/opscode-cookbooks/users.git",
-      "ref": "526a61b769778edd4e457a9c58571daee8433e75"
-    },
-    "chef-solo-search": {
-      "locked_version": "0.5.1",
-      "git": "git://github.com/edelight/chef-solo-search.git",
-      "ref": "848fad1461c78fd502975f1df2e14eed12610635"
-    },
-    "memcached-tlq": {
-      "locked_version": "0.0.2",
-      "git": "git://github.com/TalkingQuickly/memcached-tlq.git",
-      "ref": "8ac6e2c68c32f79efcc4c19c7099b7db72ab158d"
-    },
-    "mongo-tlq": {
-      "locked_version": "0.0.3",
-      "git": "git://github.com/TalkingQuickly/mongo-tlq.git",
-      "ref": "11736b711346d8d23f7f520d48a56b480e707e94"
-    },
-    "redis-tlq": {
-      "locked_version": "0.0.6",
-      "git": "git://github.com/TalkingQuickly/redis-tlq.git",
-      "ref": "0fd9ee3dcc7bd01f37e2e057b146595a7849e6aa"
-    },
-    "monit_configs-tlq": {
-      "locked_version": "0.0.5",
-      "git": "git://github.com/TalkingQuickly/monit_configs-tlq.git",
-      "ref": "f3fb019500fb78b281bdf3a4dfba8a1161effcae"
-    },
-    "monit-tlq": {
-      "locked_version": "0.3.6",
-      "git": "git://github.com/TalkingQuickly/monit-tlq.git",
-      "ref": "1418ab881e7119b59de9c0722b58faefa5e765be"
-    },
-    "rails_gem_dependencies-tlq": {
-      "locked_version": "0.0.2",
-      "git": "git://github.com/TalkingQuickly/rails_gem_dependencies-tlq.git",
-      "ref": "86d443f34b93f59dc7a4ed7e51f46a42b2c79eb1"
-    },
-    "mysql": {
-      "locked_version": "5.2.5",
-      "git": "git://github.com/opscode-cookbooks/mysql.git",
-      "ref": "a46b4d846ce0b7e4aa34402cafdef6abacc5e03d"
-    },
-    "nginx-tlq": {
-      "locked_version": "0.0.4",
-      "git": "git://github.com/TalkingQuickly/nginx-tlq.git",
-      "ref": "863f0faadbc5c61e925cb7de10dba97fc695fa89"
-    },
-    "rbenv": {
-      "locked_version": "0.7.3",
-      "git": "git://github.com/fnichol/chef-rbenv.git",
-      "ref": "0a3018634bafe58ad21c6ee271af015220e444b9"
-    },
-    "postgresql": {
-      "locked_version": "3.4.0",
-      "git": "git://github.com/opscode-cookbooks/postgresql.git",
-      "ref": "3d894a76ccc96d2a5875aee8d9c7380aaecc76da"
-    },
-    "ruby_build": {
-      "locked_version": "0.8.0"
-    },
-    "java": {
-      "locked_version": "1.19.2"
-    },
-    "apt": {
-      "locked_version": "2.3.8"
-    },
-    "openssl": {
-      "locked_version": "1.1.0"
-    }
-  }
-}
+DEPENDENCIES
+  basic_security-tlq
+    git: git://github.com/TalkingQuickly/basic_security-tlq.git
+    revision: 903e2a0f1a047331eb47c7a979ff1daf583713ad
+  build-essential
+    git: git://github.com/opscode-cookbooks/build-essential.git
+    revision: 400968913bfa8a4a5c9783b383c3b63899f2fe72
+  chef-solo-search
+    git: git://github.com/edelight/chef-solo-search.git
+    revision: 848fad1461c78fd502975f1df2e14eed12610635
+  look_and_feel-tlq
+    git: git://github.com/TalkingQuickly/look_and_feel-tlq.git
+    revision: bf3b58e4233af1455a615f66a61cd104d43415b6
+  memcached-tlq
+    git: git://github.com/TalkingQuickly/memcached-tlq.git
+    revision: 8ac6e2c68c32f79efcc4c19c7099b7db72ab158d
+  mongo-tlq
+    git: git://github.com/TalkingQuickly/mongo-tlq.git
+    revision: 11736b711346d8d23f7f520d48a56b480e707e94
+  monit-tlq
+    git: git://github.com/TalkingQuickly/monit-tlq.git
+    revision: 1418ab881e7119b59de9c0722b58faefa5e765be
+    branch: master
+  monit_configs-tlq
+    git: git://github.com/TalkingQuickly/monit_configs-tlq.git
+    revision: f3fb019500fb78b281bdf3a4dfba8a1161effcae
+    branch: master
+  mysql
+    git: git://github.com/opscode-cookbooks/mysql.git
+    revision: abf418550a534cee433ded5f85a85f3296a9709e
+  nginx-tlq
+    git: git://github.com/TalkingQuickly/nginx-tlq.git
+    revision: 863f0faadbc5c61e925cb7de10dba97fc695fa89
+  postgresql
+    git: git://github.com/opscode-cookbooks/postgresql.git
+    revision: 9dc4c6042bbd861ee8d5e2428397558fee06947e
+  rails_gem_dependencies-tlq
+    git: git://github.com/TalkingQuickly/rails_gem_dependencies-tlq.git
+    revision: 86d443f34b93f59dc7a4ed7e51f46a42b2c79eb1
+  rbenv
+    git: git://github.com/fnichol/chef-rbenv.git
+    revision: 0a3018634bafe58ad21c6ee271af015220e444b9
+  redis-tlq
+    git: git://github.com/TalkingQuickly/redis-tlq.git
+    revision: 0fd9ee3dcc7bd01f37e2e057b146595a7849e6aa
+  sudo
+    git: git://github.com/opscode-cookbooks/sudo.git
+    revision: 8bbdff7302f7a86e18d1a3f029813c665b53b322
+  users
+    git: git://github.com/opscode-cookbooks/users.git
+    revision: fca9a42ab44dadbb98432c931dfc6c049ecc23ce
+
+GRAPH
+  apt (2.4.0)
+  basic_security-tlq (0.0.1)
+  build-essential (2.0.5)
+  chef-solo-search (0.5.1)
+  chef-sugar (2.0.0)
+  java (1.22.0)
+  look_and_feel-tlq (0.0.1)
+  memcached-tlq (0.0.2)
+  mongo-tlq (0.0.3)
+  monit-tlq (0.3.6)
+  monit_configs-tlq (0.0.5)
+  mysql (5.3.6)
+    yum-mysql-community (>= 0.0.0)
+  nginx-tlq (0.0.4)
+  openssl (2.0.0)
+    chef-sugar (>= 0.0.0)
+  postgresql (3.4.1)
+    apt (>= 1.9.0)
+    build-essential (>= 0.0.0)
+    openssl (>= 0.0.0)
+  rails_gem_dependencies-tlq (0.0.2)
+  rbenv (0.7.3)
+    java (> 1.4.0)
+    ruby_build (>= 0.0.0)
+  redis-tlq (0.0.6)
+  ruby_build (0.8.0)
+  sudo (2.6.1)
+  users (1.7.1)
+  yum (3.2.2)
+  yum-mysql-community (0.1.8)
+    yum (>= 3.0.0)
