@@ -19,11 +19,11 @@ DEPENDENCIES
     revision: 11736b711346d8d23f7f520d48a56b480e707e94
   monit-tlq
     git: git://github.com/TalkingQuickly/monit-tlq.git
-    revision: 1418ab881e7119b59de9c0722b58faefa5e765be
+    revision: c9651ddc15941cae5aa4234af387088e3b10cebd
     branch: master
   monit_configs-tlq
     git: git://github.com/TalkingQuickly/monit_configs-tlq.git
-    revision: f3fb019500fb78b281bdf3a4dfba8a1161effcae
+    revision: b2b61b9f62336e8c38830759e539576f289a1e74
     branch: master
   mysql
     git: git://github.com/opscode-cookbooks/mysql.git
@@ -60,8 +60,8 @@ GRAPH
   look_and_feel-tlq (0.0.1)
   memcached-tlq (0.0.2)
   mongo-tlq (0.0.3)
-  monit-tlq (0.3.6)
-  monit_configs-tlq (0.0.5)
+  monit-tlq (0.3.7)
+  monit_configs-tlq (0.0.6)
   mysql (5.3.6)
     yum-mysql-community (>= 0.0.0)
   nginx-tlq (0.0.4)
