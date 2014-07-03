@@ -54,9 +54,9 @@
     // make sure deploy user has sudo rights
     "sudo",
     // lock down ssh, install firewall etc
-    "basic-security-tlq",
+    "basic_security-tlq",
     // make the server look pretty
-    "look-and-feel-tlq",
+    "look_and_feel-tlq",
     // get monit up and running (config is down to
     // individual apps/ a separate recipe)
     "monit-tlq",
