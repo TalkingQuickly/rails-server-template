@@ -5,17 +5,20 @@
         // the deploy user specifically gets sudo rights
         // if you're using vagrant it's worth adding "vagrant"
         // to this array
+        // The password for the dpeloy user is set in data_bags/users/deploy.json
+        // and should be generated using:
+        // openssl passwd -1 "plaintextpassword"
         "users": ["deploy"]
       }
       
     },
   "rbenv":{
     "rubies": [
-      "1.9.3-p286"
+      "2.1.2"
     ],
-    "global" : "1.9.3-p286",
+    "global" : "2.1.2",
     "gems": {
-      "1.9.3-p286" : [
+      "2.1.2" : [
         {"name":"bundler"}
       ]
     }
@@ -24,9 +27,12 @@
       "notify_email" : ["email@example.com"],
       "enable_emails" : false,
       "web_interface" : {
+        // the plaintext monit username and password
         "allow" : ["your_username","your_password"]
       },
       "mailserver" : {
+        // the easiest option is to use something like
+        // Mailgun or Sengrid
         "host" : "mailserver.example.com",
         "port" : "999",
         "username" : "your_username",
@@ -36,6 +42,8 @@
     },
     "postgresql" : {
       "password" : {
+        // this should be generated with:
+        // openssl passwd -1 "plaintextpassword"
         "postgres" : ""
       }
     },

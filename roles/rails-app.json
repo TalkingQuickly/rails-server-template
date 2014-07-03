@@ -4,11 +4,11 @@
   "default_attributes": {
     "rbenv":{
       "rubies": [
-        "1.9.2-p320"
+        "2.1.2"
       ],
-      "global" : "1.9.2-p320",
+      "global" : "2.1.2",
       "gems": {
-        "1.9.2-p320" : [
+        "2.1.2" : [
           {"name":"bundler"}
         ]
       }
