@@ -3,3 +3,5 @@ cookbooks/**/*
 nodes/*.json
 .ruby-version
 .ruby-gemset
+.vagrant
+berks-cookbooks/
