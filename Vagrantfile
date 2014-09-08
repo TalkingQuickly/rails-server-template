@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
 
         vagrant.vm.provision "chef_solo" do |chef|
-          chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
+          chef.cookbooks_path = ["berks-cookbooks", "site-cookbooks"]
           chef.data_bags_path = "data_bags"
           chef.roles_path = "roles"
           chef.json = node_json
