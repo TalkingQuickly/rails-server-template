@@ -1,7 +1,7 @@
 DEPENDENCIES
   basic_security-tlq
     git: git://github.com/TalkingQuickly/basic_security-tlq.git
-    revision: 903e2a0f1a047331eb47c7a979ff1daf583713ad
+    revision: 9b95eb1af665d24d651e18f2f456ec9ec8fc7ee3
   build-essential
     git: git://github.com/opscode-cookbooks/build-essential.git
     revision: 400968913bfa8a4a5c9783b383c3b63899f2fe72
@@ -10,7 +10,7 @@ DEPENDENCIES
     revision: 848fad1461c78fd502975f1df2e14eed12610635
   look_and_feel-tlq
     git: git://github.com/TalkingQuickly/look_and_feel-tlq.git
-    revision: bf3b58e4233af1455a615f66a61cd104d43415b6
+    revision: 45665ccf1c289a08e673e50bb572b10e5c9de4a7
   memcached-tlq
     git: git://github.com/TalkingQuickly/memcached-tlq.git
     revision: 8ac6e2c68c32f79efcc4c19c7099b7db72ab158d
@@ -52,12 +52,12 @@ DEPENDENCIES
 
 GRAPH
   apt (2.4.0)
-  basic_security-tlq (0.0.1)
+  basic_security-tlq (0.0.2)
   build-essential (2.0.5)
   chef-solo-search (0.5.1)
   chef-sugar (2.0.0)
   java (1.22.0)
-  look_and_feel-tlq (0.0.1)
+  look_and_feel-tlq (0.0.2)
   memcached-tlq (0.0.2)
   mongo-tlq (0.0.3)
   monit-tlq (0.3.7)
