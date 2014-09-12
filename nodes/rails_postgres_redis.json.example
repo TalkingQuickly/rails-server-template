@@ -10,8 +10,11 @@
         // openssl passwd -1 "plaintextpassword"
         "users": ["deploy"]
       }
-      
     },
+  "vagrant" : {
+    "name" : "rails-postgres-redis1",
+    "ip" : "192.168.50.4"
+  },
   "rbenv":{
     "rubies": [
       "2.1.2"
