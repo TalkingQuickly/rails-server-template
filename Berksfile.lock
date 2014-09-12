@@ -8,6 +8,12 @@ DEPENDENCIES
   chef-solo-search
     git: git://github.com/edelight/chef-solo-search.git
     revision: 848fad1461c78fd502975f1df2e14eed12610635
+  hostnames
+    git: git://github.com/nathantsoi/chef-cookbook-hostname.git
+    revision: cfe2b24bd1223087d4655f1bea99a337b31b9843
+  locales
+    git: git://github.com/phbergsmann/chef-locales.git
+    revision: 5ad79628e627a66edf028fe55fa7c92d26687cf0
   look_and_feel-tlq
     git: git://github.com/TalkingQuickly/look_and_feel-tlq.git
     revision: 45665ccf1c289a08e673e50bb572b10e5c9de4a7
@@ -56,7 +62,11 @@ GRAPH
   build-essential (2.0.5)
   chef-solo-search (0.5.1)
   chef-sugar (2.0.0)
+  hostnames (0.3.5)
+    hostsfile (>= 0.0.0)
+  hostsfile (2.4.5)
   java (1.22.0)
+  locales (0.3.1)
   look_and_feel-tlq (0.0.2)
   memcached-tlq (0.0.2)
   mongo-tlq (0.0.3)
