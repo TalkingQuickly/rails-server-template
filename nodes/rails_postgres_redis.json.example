@@ -12,8 +12,9 @@
       }
     },
   "vagrant" : {
-    "name" : "rails-postgres-redis1",
-    "ip" : "192.168.50.4"
+    "exclusions" : [],
+    "ip" : "192.168.1.32",
+    "name" : "rails-postgres-redis1"
   },
   "rbenv":{
     "rubies": [
