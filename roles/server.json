@@ -16,7 +16,6 @@
         // password when using sudo
         "passwordless": true
       }
-      
     },
     "firewall_allow":[],
     "monit": {
@@ -34,7 +33,7 @@
       "web_interface" : {
         // access credentials for the web interface. Just
         // enabling this won't set up the web interface,
-        // it will need either a vhost in nginx os its port
+        // it will need either a vhost in nginx or its port
         // being allowed through ufw
         "allow" : ["yourusername","yourpassword"]
       }
@@ -60,6 +59,7 @@
     // get monit up and running (config is down to
     // individual apps/ a separate recipe)
     "monit-tlq",
+    // monit configurations for a standard ubuntu system
     "monit_configs-tlq::system"
   ],
   "chef_type": "role",
