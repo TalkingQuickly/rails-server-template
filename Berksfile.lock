@@ -29,7 +29,7 @@ DEPENDENCIES
     branch: master
   monit_configs-tlq
     git: git://github.com/TalkingQuickly/monit_configs-tlq.git
-    revision: b2b61b9f62336e8c38830759e539576f289a1e74
+    revision: 7c254070842033ede08e18d0bd7facc8d08e8dd8
     branch: master
   mysql
     git: git://github.com/opscode-cookbooks/mysql.git
@@ -72,7 +72,7 @@ GRAPH
   memcached-tlq (0.0.2)
   mongo-tlq (0.0.3)
   monit-tlq (0.3.7)
-  monit_configs-tlq (0.0.6)
+  monit_configs-tlq (0.1.1)
   mysql (5.3.6)
     yum-mysql-community (>= 0.0.0)
   nginx-tlq (0.0.4)
