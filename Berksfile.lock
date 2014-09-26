@@ -11,9 +11,12 @@ DEPENDENCIES
   hostnames
     git: git://github.com/nathantsoi/chef-cookbook-hostname.git
     revision: cfe2b24bd1223087d4655f1bea99a337b31b9843
+  locales
+    git: git://github.com/phbergsmann/chef-locales.git
+    revision: 5ad79628e627a66edf028fe55fa7c92d26687cf0
   look_and_feel-tlq
     git: git://github.com/TalkingQuickly/look_and_feel-tlq.git
-    revision: 45665ccf1c289a08e673e50bb572b10e5c9de4a7
+    revision: e8d04382399979e664862bed66cb48c16e0c098d
   memcached-tlq
     git: git://github.com/TalkingQuickly/memcached-tlq.git
     revision: 8ac6e2c68c32f79efcc4c19c7099b7db72ab158d
@@ -36,7 +39,7 @@ DEPENDENCIES
     revision: 863f0faadbc5c61e925cb7de10dba97fc695fa89
   postgresql
     git: git://github.com/opscode-cookbooks/postgresql.git
-    revision: 9dc4c6042bbd861ee8d5e2428397558fee06947e
+    revision: bfd310f37dd39d3f8b522e896e17360c2fd66ab7
   rails_gem_dependencies-tlq
     git: git://github.com/TalkingQuickly/rails_gem_dependencies-tlq.git
     revision: f62ff22492dd9a2c31cd856de176c19f0fbe2d73
@@ -58,12 +61,14 @@ GRAPH
   basic_security-tlq (0.0.2)
   build-essential (2.0.5)
   chef-solo-search (0.5.1)
-  chef-sugar (2.0.0)
+  chef-sugar (2.3.0)
   hostnames (0.3.5)
     hostsfile (>= 0.0.0)
   hostsfile (2.4.5)
   java (1.22.0)
-  look_and_feel-tlq (0.0.2)
+  locales (0.3.1)
+  look_and_feel-tlq (0.0.4)
+    locales (>= 0.0.0)
   memcached-tlq (0.0.2)
   mongo-tlq (0.0.3)
   monit-tlq (0.3.7)
@@ -73,7 +78,7 @@ GRAPH
   nginx-tlq (0.0.4)
   openssl (2.0.0)
     chef-sugar (>= 0.0.0)
-  postgresql (3.4.1)
+  postgresql (3.4.4)
     apt (>= 1.9.0)
     build-essential (>= 0.0.0)
     openssl (>= 0.0.0)

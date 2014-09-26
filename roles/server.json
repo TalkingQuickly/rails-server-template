@@ -18,6 +18,16 @@
       }
     },
     "firewall_allow":[],
+    "locales" : {
+      "packages" : ["locales"],
+      "default" : "en_US.utf8"
+    },
+    "look_and_feel-tlq" : {
+      // any extra locales we want available. Useful if your
+      // local dev machine uses a locale which doesn't match
+      // the servers locale.
+      "additional_locales" : ["en_GB.utf8"]
+    },
     "monit": {
       // which lucky person gets monit emails if enabled
       "notify_emails" : ["user@example.com"],
@@ -54,6 +64,8 @@
     "sudo",
     // lock down ssh, install firewall etc
     "basic_security-tlq",
+    // Make sure we have a valid locale setup
+    "locales",
     // make the server look pretty
     "look_and_feel-tlq",
     // get monit up and running (config is down to

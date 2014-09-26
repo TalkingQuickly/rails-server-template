@@ -19,3 +19,5 @@ cookbook 'nginx-tlq', github: 'TalkingQuickly/nginx-tlq'
 cookbook 'rbenv', github: 'fnichol/chef-rbenv'
 cookbook 'postgresql', github: 'opscode-cookbooks/postgresql'
 cookbook 'hostnames', github: 'nathantsoi/chef-cookbook-hostname'
+
+cookbook 'locales', github: 'phbergsmann/chef-locales'
