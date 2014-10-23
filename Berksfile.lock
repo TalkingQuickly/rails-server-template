@@ -1,13 +1,16 @@
 DEPENDENCIES
-  basic_security-tlq
-    git: git://github.com/TalkingQuickly/basic_security-tlq.git
-    revision: 9b95eb1af665d24d651e18f2f456ec9ec8fc7ee3
+  apt
+    git: git://github.com/opscode-cookbooks/apt.git
+    revision: a22d25ba5862d463b08ebbf52f163a90f9878704
   build-essential
     git: git://github.com/opscode-cookbooks/build-essential.git
     revision: 400968913bfa8a4a5c9783b383c3b63899f2fe72
   chef-solo-search
     git: git://github.com/edelight/chef-solo-search.git
     revision: 848fad1461c78fd502975f1df2e14eed12610635
+  fail2ban
+    git: git://github.com/opscode-cookbooks/fail2ban.git
+    revision: 98a8d73afb8ba4ee8b3e7fa30676c8dc6a890fc4
   hostnames
     git: git://github.com/nathantsoi/chef-cookbook-hostname.git
     revision: cfe2b24bd1223087d4655f1bea99a337b31b9843
@@ -16,7 +19,7 @@ DEPENDENCIES
     revision: 5ad79628e627a66edf028fe55fa7c92d26687cf0
   look_and_feel-tlq
     git: git://github.com/TalkingQuickly/look_and_feel-tlq.git
-    revision: e8d04382399979e664862bed66cb48c16e0c098d
+    revision: 214b18d5266909721e85fe3acac4f7c926a0c609
   memcached-tlq
     git: git://github.com/TalkingQuickly/memcached-tlq.git
     revision: 8ac6e2c68c32f79efcc4c19c7099b7db72ab158d
@@ -34,9 +37,15 @@ DEPENDENCIES
   mysql
     git: git://github.com/opscode-cookbooks/mysql.git
     revision: abf418550a534cee433ded5f85a85f3296a9709e
-  nginx-tlq
-    git: git://github.com/TalkingQuickly/nginx-tlq.git
-    revision: 863f0faadbc5c61e925cb7de10dba97fc695fa89
+  nginx
+    git: git://github.com/miketheman/nginx.git
+    revision: e128a0ad7322b0d406857aac5efc7a1c1cb824cd
+  ntp
+    git: git://github.com/gmiranda23/ntp.git
+    revision: 103c84e8e36465e46ea9d597d3aad9aa38222978
+  openssh
+    git: git://github.com/opscode-cookbooks/openssh.git
+    revision: 2548e378898a87fbd5d2f3efeb5b503543b63fa4
   postgresql
     git: git://github.com/opscode-cookbooks/postgresql.git
     revision: bfd310f37dd39d3f8b522e896e17360c2fd66ab7
@@ -52,22 +61,31 @@ DEPENDENCIES
   sudo
     git: git://github.com/opscode-cookbooks/sudo.git
     revision: 8bbdff7302f7a86e18d1a3f029813c665b53b322
+  ufw
+    git: git://github.com/opscode-cookbooks/ufw.git
+    revision: 895fba816ca54456c9c66d008ebbce744f7dec59
   users
     git: git://github.com/opscode-cookbooks/users.git
     revision: fca9a42ab44dadbb98432c931dfc6c049ecc23ce
 
 GRAPH
-  apt (2.4.0)
-  basic_security-tlq (0.0.2)
+  apt (2.6.0)
+  bluepill (2.3.1)
+    rsyslog (>= 0.0.0)
   build-essential (2.0.5)
   chef-solo-search (0.5.1)
   chef-sugar (2.3.0)
+  fail2ban (2.2.1)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  firewall (0.11.8)
   hostnames (0.3.5)
     hostsfile (>= 0.0.0)
   hostsfile (2.4.5)
+  iptables (0.14.0)
   java (1.22.0)
   locales (0.3.1)
-  look_and_feel-tlq (0.0.4)
+  look_and_feel-tlq (0.0.5)
     locales (>= 0.0.0)
   memcached-tlq (0.0.2)
   mongo-tlq (0.0.3)
@@ -75,7 +93,17 @@ GRAPH
   monit_configs-tlq (0.1.1)
   mysql (5.3.6)
     yum-mysql-community (>= 0.0.0)
-  nginx-tlq (0.0.4)
+  nginx (2.7.4)
+    apt (~> 2.2)
+    bluepill (~> 2.3)
+    build-essential (~> 2.0)
+    ohai (~> 2.0)
+    runit (~> 1.2)
+    yum-epel (~> 0.3)
+  ntp (1.6.5)
+  ohai (2.0.1)
+  openssh (1.3.5)
+    iptables (>= 0.0.0)
   openssl (2.0.0)
     chef-sugar (>= 0.0.0)
   postgresql (3.4.4)
@@ -88,9 +116,18 @@ GRAPH
     java (> 1.4.0)
     ruby_build (>= 0.0.0)
   redis-tlq (0.0.6)
+  rsyslog (1.12.2)
   ruby_build (0.8.0)
+  runit (1.5.10)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
   sudo (2.6.1)
+  ufw (0.7.5)
+    firewall (>= 0.9.0)
   users (1.7.1)
   yum (3.2.2)
+  yum-epel (0.5.1)
+    yum (~> 3.0)
   yum-mysql-community (0.1.8)
     yum (>= 3.0.0)

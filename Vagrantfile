@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.box = "ubuntu/trusty64"
-  config.berkshelf.enabled = false
+  config.berkshelf.enabled = true
 
   # This should match the version specified in your
   # Gemfile
@@ -58,7 +58,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
           # Use berks-cookbooks not cookbooks and remember
           # to explicitly vendor berkshelf cookbooks
-          chef.cookbooks_path = ["berks-cookbooks", "site-cookbooks"]
+          chef.cookbooks_path = ["site-cookbooks"]
           chef.data_bags_path = "data_bags"
           chef.roles_path = "roles"
 

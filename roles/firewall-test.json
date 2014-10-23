@@ -1,17 +1,15 @@
 {
-   "name": "nginx-server",
+   "name": "firewall-test",
    "description": "Nginx server",
    "default_attributes": {
       "firewall" : {
         "rules" : [
-          {"allow http on port 80" : {"port" : 80}}
+          {"allow http on port 81" : {"port" : 81}}
         ]
       }
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "recipe[chef-solo-search]",
-      "recipe[nginx::repo]",
       // "recipe[monit_configs-tlq::nginx]",
       "recipe[ufw::default]"
    ],
