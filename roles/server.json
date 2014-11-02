@@ -83,7 +83,7 @@
     "recipe[locales::default]",
     // Block repeated failed login attempts
     "recipe[fail2ban::default]",
-    // make the server look pretty
+    // Visual tweaks and tools for
     "recipe[look_and_feel-tlq::default]",
     // get monit up and running (config is down to
     // individual apps/ a separate recipe)
