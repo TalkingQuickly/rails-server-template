@@ -20,19 +20,19 @@ DEPENDENCIES
   look_and_feel-tlq
     git: git://github.com/TalkingQuickly/look_and_feel-tlq.git
     revision: 214b18d5266909721e85fe3acac4f7c926a0c609
-  memcached-tlq
-    git: git://github.com/TalkingQuickly/memcached-tlq.git
-    revision: 8ac6e2c68c32f79efcc4c19c7099b7db72ab158d
-  mongo-tlq
-    git: git://github.com/TalkingQuickly/mongo-tlq.git
-    revision: 11736b711346d8d23f7f520d48a56b480e707e94
+  memcached
+    git: git://github.com/opscode-cookbooks/memcached.git
+    revision: 8ba85664be26833441732e149453142ce5769dfe
+  mongodb
+    git: git@github.com:edelight/chef-mongodb.git
+    revision: 72ffcb114df6c453b59717eb390b2819d48025bd
   monit-tlq
     git: git://github.com/TalkingQuickly/monit-tlq.git
     revision: c9651ddc15941cae5aa4234af387088e3b10cebd
     branch: master
   monit_configs-tlq
     git: git://github.com/TalkingQuickly/monit_configs-tlq.git
-    revision: 7c254070842033ede08e18d0bd7facc8d08e8dd8
+    revision: c10ee522a69db1ec48672a2b1c8a42ae92e027e1
     branch: master
   mysql
     git: git://github.com/opscode-cookbooks/mysql.git
@@ -55,9 +55,9 @@ DEPENDENCIES
   rbenv
     git: git://github.com/fnichol/chef-rbenv.git
     revision: 0a3018634bafe58ad21c6ee271af015220e444b9
-  redis-tlq
-    git: git://github.com/TalkingQuickly/redis-tlq.git
-    revision: 0fd9ee3dcc7bd01f37e2e057b146595a7849e6aa
+  redis-server
+    git: git://github.com/TalkingQuickly/redis-server.git
+    revision: 4298f8fe012c1501382dbf2fc9edb737bbf12483
   sudo
     git: git://github.com/opscode-cookbooks/sudo.git
     revision: 8bbdff7302f7a86e18d1a3f029813c665b53b322
@@ -87,10 +87,17 @@ GRAPH
   locales (0.3.1)
   look_and_feel-tlq (0.0.5)
     locales (>= 0.0.0)
-  memcached-tlq (0.0.2)
-  mongo-tlq (0.0.3)
+  memcached (1.7.3)
+    runit (~> 1.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  mongodb (0.16.1)
+    apt (>= 1.8.2)
+    python (>= 0.0.0)
+    runit (>= 1.5.0)
+    yum (>= 3.0.0)
   monit-tlq (0.3.7)
-  monit_configs-tlq (0.1.1)
+  monit_configs-tlq (0.1.2)
   mysql (5.3.6)
     yum-mysql-community (>= 0.0.0)
   nginx (2.7.4)
@@ -110,12 +117,16 @@ GRAPH
     apt (>= 1.9.0)
     build-essential (>= 0.0.0)
     openssl (>= 0.0.0)
+  python (1.4.6)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
   rails_gem_dependencies-tlq (0.0.3)
     apt (>= 0.0.0)
   rbenv (0.7.3)
     java (> 1.4.0)
     ruby_build (>= 0.0.0)
-  redis-tlq (0.0.6)
+  redis-server (0.1.1)
+    apt (>= 0.0.0)
   rsyslog (1.12.2)
   ruby_build (0.8.0)
   runit (1.5.10)
