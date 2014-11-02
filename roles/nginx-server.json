@@ -10,9 +10,9 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "recipe[chef-solo-search]",
       "recipe[nginx::repo]",
-      // "recipe[monit_configs-tlq::nginx]",
+      "recipe[nginx::default]",
+      "recipe[monit_configs-tlq::nginx]",
       "recipe[ufw::default]"
    ],
    "chef_type": "role"
