@@ -6,8 +6,8 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "memcached-tlq",
-      "monit_configs-tlq::memcached"
+      "recipe[memcached::default]",
+      "recipe[monit_configs-tlq::memcached]"
    ],
    "chef_type": "role"
 }
