@@ -6,18 +6,27 @@
   "name": "server",
   "description": "A server of some kind...",
   "default_attributes": {
+    "apt" : {
+      "unattended_upgrades" : {
+        "enable" : true,
+        "allowed_origins" : [
+          "${distro_id} stable",
+          "${distro_id} ${distro_codename}-security"
+        ],
+        "automatic_reboot" : true
+      }
+    },
     "authorization": {
       "sudo": {
         // everyone in the group sysadmin gets sudo rights
         "groups": ["sysadmin"],
         // the deploy user specifically gets sudo rights
         "users": ["deploy"],
-        // whether a user with sudo rights has to enter their
-        // password when using sudo
+        // whether a user with sudo rights can execute sudo
+        // commands without entering their password.
         "passwordless": true
       }
     },
-    "firewall_allow":[],
     "locales" : {
       "packages" : ["locales"],
       "default" : "en_US.utf8"
@@ -48,31 +57,47 @@
         "allow" : ["yourusername","yourpassword"]
       }
     },
-    "monit_address" : "monit.devops.local"
+    "monit_address" : "monit.devops.local",
+    "openssh" : {
+      "server" : {
+        "password_authentication" : "no",
+        "challenge_response_authentication" : "no",
+        "permit_empty_passwords" : "no",
+        "use_pam" : "no",
+        "x11_forwarding" : "no",
+        "permit_root_login" : "yes"
+      }
+    }
   },
   "json_class": "Chef::Role",
   "run_list": [
-    // because secure passwords are nice
-    "openssl",
-    // for building things
-    "build-essential",
-    // this is needed for users to work
-    "chef-solo-search",
-    // setup standard sys admin users
-    "users::sysadmins",
+    // required for generating secure passwords
+    "recipe[openssl::default]",
+    // required for building from source
+    "recipe[build-essential::default]",
+    // required by the users cookbook when using chef solo
+    "recipe[chef-solo-search::default]",
+    // setup standard sysadmin users
+    "recipe[users::sysadmins]",
+    // install and enable ufw
+    "recipe[ufw::default]",
+    // enable unattended upgrades
+    "recipe[apt::unattended-upgrades]",
+    // enable automatic time sync
+    "recipe[ntp::default]",
     // make sure deploy user has sudo rights
-    "sudo",
-    // lock down ssh, install firewall etc
-    "basic_security-tlq",
+    "recipe[sudo::default]",
     // Make sure we have a valid locale setup
-    "locales",
-    // make the server look pretty
-    "look_and_feel-tlq",
+    "recipe[locales::default]",
+    // Block repeated failed login attempts
+    "recipe[fail2ban::default]",
+    // Visual tweaks and tools
+    "recipe[look_and_feel-tlq::default]",
     // get monit up and running (config is down to
     // individual apps/ a separate recipe)
-    "monit-tlq",
+    "recipe[monit-tlq::default]",
     // monit configurations for a standard ubuntu system
-    "monit_configs-tlq::system"
+    "recipe[monit_configs-tlq::system]"
   ],
   "chef_type": "role",
   "override_attributes": {

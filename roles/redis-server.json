@@ -2,13 +2,12 @@
    "name": "redis-server",
    "description": "Redis server",
    "default_attributes": {
-      "redis": {
-          "dont_bind" : false
+      "redis-server": {
        }
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "redis-tlq",
+      "recipe[redis-server::default]",
       "monit_configs-tlq::redis-server"
    ],
    "chef_type": "role"

@@ -49,15 +49,19 @@
     "password" : {
       // this should be generated with:
       // openssl passwd -1 "plaintextpassword"
-      "postgres" : "$1$ASpgxSbq$Hz2mtAux8QpPVfugC5edc1"
+      // currently test
+      "postgres" : "$1$mMK9HNoN$r42n7Q8fKsZabbknlT1Zt1"
     }
   },
   "run_list":
   [
     "role[server]",
-    "role[nginx]",
+    "role[nginx-server]",
     "role[postgres-server]",
     "role[rails-app]",
-    "role[redis-server]"
+    "role[redis-server]",
+    "role[memcached-server]",
+    "role[mysql-server]",
+    "role[mongo-server]"
   ]
 }

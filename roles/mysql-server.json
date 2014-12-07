@@ -2,28 +2,27 @@
    "name": "mysql-server",
    "description": "MySQL Server",
    "default_attributes": {
-        "mysql": {
-            // only allow root login via localhost (e.g.
-            // ssh tunnel).
-            "allow_remote_root":false,
-            // remote the default test database
-            "remote_test_database":true,
-            // remove the anonymous testing users
-            "remove_anonymous_users":true,
-            // override the package definitions to get
-            // the ones we need for rails. @todo: override this
-            // in rails-app not here.
-            "client": {
-              "packages": ["mysql-client", "libmysqlclient-dev","ruby-mysql"]
-            },
-            "bind_address":"127.0.0.1"
-          }
+    "mysql": {
+        // only allow root login via localhost (e.g.
+        // ssh tunnel).
+        "allow_remote_root":false,
+        // remote the default test database
+        "remote_test_database":true,
+        // remove the anonymous testing users
+        "remove_anonymous_users":true,
+        // override the package definitions to get
+        // the ones we need for rails.
+        "client": {
+          "packages": ["mysql-client", "libmysqlclient-dev","ruby-mysql"]
+        },
+        "bind_address":"127.0.0.1"
+      }
    },
    "json_class": "Chef::Role",
    "run_list": [
-        "mysql::client",
-        "mysql::server",
-        "monit_configs-tlq::mysql-server"
+      "mysql::client",
+      "mysql::server",
+      "monit_configs-tlq::mysql-server"
    ],
    "chef_type": "role"
 }
