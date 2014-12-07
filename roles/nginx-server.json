@@ -6,6 +6,9 @@
         "rules" : [
           {"allow http on port 80" : {"port" : 80}}
         ]
+      },
+      "nginx" : {
+        "default_site_enabled" : false
       }
    },
    "json_class": "Chef::Role",
