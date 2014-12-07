@@ -8,7 +8,12 @@
   "default_attributes": {
     "apt" : {
       "unattended_upgrades" : {
-        "enable" : true
+        "enable" : true,
+        "allowed_origins" : [
+          "${distro_id} stable",
+          "${distro_id} ${distro_codename}-security"
+        ],
+        "automatic_reboot" : true
       }
     },
     "authorization": {
@@ -17,8 +22,8 @@
         "groups": ["sysadmin"],
         // the deploy user specifically gets sudo rights
         "users": ["deploy"],
-        // whether a user with sudo rights has to enter their
-        // password when using sudo
+        // whether a user with sudo rights can execute sudo
+        // commands without entering their password.
         "passwordless": true
       }
     },
@@ -59,7 +64,8 @@
         "challenge_response_authentication" : "no",
         "permit_empty_passwords" : "no",
         "use_pam" : "no",
-        "x11_forwarding" : "no"
+        "x11_forwarding" : "no",
+        "permit_root_login" : "yes"
       }
     }
   },
@@ -73,6 +79,8 @@
     "recipe[chef-solo-search::default]",
     // setup standard sysadmin users
     "recipe[users::sysadmins]",
+    // install and enable ufw
+    "recipe[ufw::default]",
     // enable unattended upgrades
     "recipe[apt::unattended-upgrades]",
     // enable automatic time sync
@@ -83,7 +91,7 @@
     "recipe[locales::default]",
     // Block repeated failed login attempts
     "recipe[fail2ban::default]",
-    // Visual tweaks and tools for
+    // Visual tweaks and tools
     "recipe[look_and_feel-tlq::default]",
     // get monit up and running (config is down to
     // individual apps/ a separate recipe)
