@@ -25,7 +25,7 @@
     "web_interface" : {
       // the plaintext monit username and password
       "allow" : ["REPLACE(USERNAME)","REPLACE(PASSWORD)"]
-    },
+    }
   },
   "postgresql" : {
     "password" : {
