@@ -54,7 +54,7 @@
   "run_list":
   [
     "role[server]",
-    "role[nginx]",
+    "role[nginx-server]",
     "role[postgres-server]",
     "role[rails-app]",
     "role[redis-server]"
