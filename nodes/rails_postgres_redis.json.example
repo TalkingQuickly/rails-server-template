@@ -5,7 +5,7 @@
       // An array of users who should have access to sudo.
       // If you're using vagrant it's worth adding "vagrant"
       // to this array
-      // The password for the dpeloy user is set in data_bags/users/deploy.json
+      // The password for the deploy user is set in data_bags/users/deploy.json
       // and should be generated using:
       // openssl passwd -1 "plaintextpassword"
       "users": ["deploy"]
