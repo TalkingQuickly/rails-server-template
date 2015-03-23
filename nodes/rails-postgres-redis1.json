@@ -29,7 +29,7 @@
     }
   },
   "monit": {
-    "notify_email" : ["email@example.com"],
+    "notify_emails" : ["email@example.com"],
     "enable_emails" : false,
     "web_interface" : {
       // the plaintext monit username and password
