@@ -21,7 +21,7 @@
       "password" : "REPLACE",
       "hostname" : "REPLACE"
     },
-    "notify_email" : ["REPLACE@example.com"],
+    "notify_emails" : ["REPLACE@example.com"],
     "web_interface" : {
       // the plaintext monit username and password
       "allow" : ["REPLACE(USERNAME)","REPLACE(PASSWORD)"]
