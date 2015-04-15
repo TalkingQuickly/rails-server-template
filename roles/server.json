@@ -79,6 +79,8 @@
     "recipe[chef-solo-search::default]",
     // setup standard sysadmin users
     "recipe[users::sysadmins]",
+    // change server access authorizations
+    "recipe[openssh::default]",
     // install and enable ufw
     "recipe[ufw::default]",
     // enable unattended upgrades
