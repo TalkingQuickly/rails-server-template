@@ -160,3 +160,6 @@ DEPENDENCIES
   chef (~> 11.16.0)
   chef-zero (= 2.2)
   knife-solo (= 0.4.2)
+
+BUNDLED WITH
+   1.10.3
