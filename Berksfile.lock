@@ -28,7 +28,7 @@ DEPENDENCIES
     revision: 72ffcb114df6c453b59717eb390b2819d48025bd
   monit-tlq
     git: git://github.com/TalkingQuickly/monit-tlq.git
-    revision: 8431bf84a8b4150cccc877fd04bbb50c20081d8c
+    revision: 28bbdc06702a00c5cb5ace1fd7f79a51a127ed0c
     branch: master
   monit_configs-tlq
     git: git://github.com/TalkingQuickly/monit_configs-tlq.git
@@ -96,7 +96,7 @@ GRAPH
     python (>= 0.0.0)
     runit (>= 1.5.0)
     yum (>= 3.0.0)
-  monit-tlq (0.3.10)
+  monit-tlq (0.3.11)
   monit_configs-tlq (0.1.2)
   mysql (5.3.6)
     yum-mysql-community (>= 0.0.0)
