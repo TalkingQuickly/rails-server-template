@@ -5,7 +5,7 @@
       // An array of users who should have access to sudo.
       // If you're using vagrant it's worth adding "vagrant"
       // to this array
-      // The password for the dpeloy user is set in data_bags/users/deploy.json
+      // The password for the deploy user is set in data_bags/users/deploy.json
       // and should be generated using:
       // openssl passwd -1 "plaintextpassword"
       "users": ["deploy"]
@@ -21,11 +21,11 @@
       "password" : "REPLACE",
       "hostname" : "REPLACE"
     },
-    "notify_email" : ["REPLACE@example.com"],
+    "notify_emails" : ["REPLACE@example.com"],
     "web_interface" : {
       // the plaintext monit username and password
       "allow" : ["REPLACE(USERNAME)","REPLACE(PASSWORD)"]
-    },
+    }
   },
   "postgresql" : {
     "password" : {
@@ -54,7 +54,7 @@
   "run_list":
   [
     "role[server]",
-    "role[nginx]",
+    "role[nginx-server]",
     "role[postgres-server]",
     "role[rails-app]",
     "role[redis-server]"

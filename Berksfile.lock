@@ -28,7 +28,7 @@ DEPENDENCIES
     revision: 72ffcb114df6c453b59717eb390b2819d48025bd
   monit-tlq
     git: git://github.com/TalkingQuickly/monit-tlq.git
-    revision: c9651ddc15941cae5aa4234af387088e3b10cebd
+    revision: 28bbdc06702a00c5cb5ace1fd7f79a51a127ed0c
     branch: master
   monit_configs-tlq
     git: git://github.com/TalkingQuickly/monit_configs-tlq.git
@@ -42,7 +42,7 @@ DEPENDENCIES
     revision: e128a0ad7322b0d406857aac5efc7a1c1cb824cd
   ntp
     git: git://github.com/gmiranda23/ntp.git
-    revision: 103c84e8e36465e46ea9d597d3aad9aa38222978
+    revision: 95bec55b5b895c370e63aef2c5aef2d2ca6abc89
   openssh
     git: git://github.com/opscode-cookbooks/openssh.git
     revision: 2548e378898a87fbd5d2f3efeb5b503543b63fa4
@@ -96,7 +96,7 @@ GRAPH
     python (>= 0.0.0)
     runit (>= 1.5.0)
     yum (>= 3.0.0)
-  monit-tlq (0.3.7)
+  monit-tlq (0.3.11)
   monit_configs-tlq (0.1.2)
   mysql (5.3.6)
     yum-mysql-community (>= 0.0.0)
@@ -107,7 +107,7 @@ GRAPH
     ohai (~> 2.0)
     runit (~> 1.2)
     yum-epel (~> 0.3)
-  ntp (1.6.5)
+  ntp (1.8.6)
   ohai (2.0.1)
   openssh (1.3.5)
     iptables (>= 0.0.0)
