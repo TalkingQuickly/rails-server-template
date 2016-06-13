@@ -65,11 +65,10 @@
     "recipe[openssl::default]",
     // required for building from source
     "recipe[build-essential::default]",
-    // required by the users cookbook when using chef solo
-    "recipe[chef-solo-search::default]",
     // setup standard sysadmin users
     "recipe[users::sysadmins]",
     // install and enable ufw
+    "recipe[firewall::default]",
     "recipe[ufw::default]",
     // enable unattended upgrades
     "recipe[apt::unattended-upgrades]",

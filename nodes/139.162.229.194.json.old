@@ -53,10 +53,10 @@
   },
   "run_list":
   [
-    "role[server]",
-    "role[nginx-server]",
-    "role[postgres-server]",
-    "role[rails-app]",
-    "role[redis-server]"
+    "role[server]"
+    //"role[nginx-server]",
+    //"role[postgres-server]",
+    //"role[rails-app]",
+    //"role[redis-server]"
   ]
 }

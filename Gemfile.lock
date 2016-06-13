@@ -94,6 +94,8 @@ GEM
       chef (>= 10.20)
       erubis (~> 2.7.0)
       net-ssh (>= 2.7, < 4.0)
+    knife-zero (1.16.0)
+      chef (~> 12.6)
     libyajl2 (1.2.0)
     minitar (0.5.4)
     mixlib-authentication (1.4.1)
@@ -209,6 +211,7 @@ DEPENDENCIES
   chef (~> 12.11.8)
   chef-zero (= 4.6.2)
   knife-solo (= 0.6.0)
+  knife-zero
 
 BUNDLED WITH
    1.10.6
