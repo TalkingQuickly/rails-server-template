@@ -1,0 +1,62 @@
+{
+  "environment":"production",
+  "authorization": {
+    "sudo": {
+      // An array of users who should have access to sudo.
+      // If you're using vagrant it's worth adding "vagrant"
+      // to this array
+      // The password for the deploy user is set in data_bags/users/deploy.json
+      // and should be generated using:
+      // openssl passwd -1 "plaintextpassword"
+      "users": ["deploy"]
+    }
+  },
+  "monit": {
+    "enable_emails" : false,
+    "mailserver" : {
+      // For example Mailgun or Sendgrid
+      "host" : "REPLACE.example.com",
+      "port" : "999",
+      "username" : "REPLACE",
+      "password" : "REPLACE",
+      "hostname" : "REPLACE"
+    },
+    "notify_emails" : ["REPLACE@example.com"],
+    "web_interface" : {
+      // the plaintext monit username and password
+      "allow" : ["REPLACE(USERNAME)","REPLACE(PASSWORD)"]
+    }
+  },
+  "postgresql" : {
+    "password" : {
+      // this should be generated with:
+      // openssl passwd -1 "plaintextpassword"
+      "postgres" : "REPLACE"
+    }
+  },
+  "rbenv":{
+    "rubies": [
+      "2.3.1"
+    ],
+    "global" : "2.3.1",
+    "gems": {
+      "2.3.1" : [
+        {"name":"bundler"}
+      ]
+    }
+  },
+  "vagrant" : {
+  // See http://www.talkingquickly.co.uk/2014/08/auto-generate-vagrant-machines-from-chef-node-definitions/ for more on this
+    "exclusions" : [],
+    "ip" : "192.168.1.32",
+    "name" : "rails-postgres-redis1"
+  },
+  "run_list":
+  [
+    "role[server]",
+    "role[nginx-server]",
+    "role[postgres-server]",
+    "role[rails-app]",
+    "role[redis-server]"
+  ]
+}
