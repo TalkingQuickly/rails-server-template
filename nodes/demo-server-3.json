@@ -1,5 +1,5 @@
 {
-  "name": "demo-server-1",
+  "name": "demo-server-3",
   "normal": {
     "knife_zero": {
       "host": "139.162.229.194"
@@ -7,9 +7,6 @@
     "tags": [
 
     ],
-    "firewall": {
-      "state": "[{\"allow http on port 80\"=>{\"port\"=>80}}]"
-    },
     "ruby_build": {
       "install_pkgs": [
         "tar",
@@ -44,10 +41,13 @@
         "g++"
       ]
     },
+    "firewall": {
+      "state": "[{\"allow http on port 80\"=>{\"port\"=>80}}]"
+    },
     "postgresql": {
       "enable_pgdg_apt": true,
       "password": {
-        "postgres": "o3nYFbVJA3uJBMHm8nE3"
+        "postgres": "7oVHWbYRLVYhHAvE3faZ"
       },
       "config": {
         "data_directory": "/var/lib/postgresql/9.5/main",
@@ -486,6 +486,343 @@
       },
       "mongo": {
         "pidfile": "/var/run/mongo/mongo.pid"
+      }
+    },
+    "rsyslog": {
+      "default_log_dir": "/var/log",
+      "log_dir": "/srv/rsyslog",
+      "working_dir": "/var/spool/rsyslog",
+      "server": false,
+      "use_relp": false,
+      "relp_port": 20514,
+      "protocol": "tcp",
+      "bind": "*",
+      "port": 514,
+      "server_ip": null,
+      "server_search": "role:loghost",
+      "remote_logs": true,
+      "per_host_dir": "%$YEAR%/%$MONTH%/%$DAY%/%HOSTNAME%",
+      "max_message_size": "2k",
+      "preserve_fqdn": "off",
+      "high_precision_timestamps": false,
+      "repeated_msg_reduction": "on",
+      "logs_to_forward": "*.*",
+      "enable_imklog": true,
+      "config_prefix": "/etc",
+      "default_file_template": null,
+      "default_remote_template": null,
+      "rate_limit_interval": null,
+      "rate_limit_burst": null,
+      "enable_tls": false,
+      "action_queue_max_disk_space": "1G",
+      "tls_ca_file": null,
+      "tls_certificate_file": null,
+      "tls_key_file": null,
+      "tls_auth_mode": "anon",
+      "use_local_ipv4": false,
+      "allow_non_local": false,
+      "custom_remote": [
+        {
+
+        }
+      ],
+      "additional_directives": {
+
+      },
+      "service_name": "rsyslog",
+      "user": "syslog",
+      "group": "adm",
+      "priv_seperation": true,
+      "priv_user": null,
+      "priv_group": "syslog",
+      "modules": [
+        "imuxsock",
+        "imklog"
+      ],
+      "default_facility_logs": {
+        "auth,authpriv.*": "/var/log/auth.log",
+        "*.*;auth,authpriv.none": "-/var/log/syslog",
+        "daemon.*": "-/var/log/daemon.log",
+        "kern.*": "-/var/log/kern.log",
+        "mail.*": "-/var/log/mail.log",
+        "user.*": "-/var/log/user.log",
+        "mail.info": "-/var/log/mail.info",
+        "mail.warn": "-/var/log/mail.warn",
+        "mail.err": "/var/log/mail.err",
+        "news.crit": "/var/log/news/news.crit",
+        "news.err": "/var/log/news/news.err",
+        "news.notice": "-/var/log/news/news.notice",
+        "*.=debug;auth,authpriv.none;news.none;mail.none": "-/var/log/debug",
+        "*.=info;*.=notice;*.=warn;auth,authpriv.none;cron,daemon.none;mail,news.none": "-/var/log/messages",
+        "*.emerg": ":omusrmsg:*"
+      }
+    },
+    "bluepill": {
+      "bin": "/opt/chef/embedded/bin/bluepill",
+      "logfile": "/var/log/bluepill.log",
+      "pid_dir": "/var/run/bluepill",
+      "state_dir": "/var/lib/bluepill",
+      "group": 0,
+      "use_rsyslog": false,
+      "init_dir": "/etc/init.d",
+      "conf_dir": "/etc/bluepill",
+      "defaults_dir": "/etc/default"
+    },
+    "ohai": {
+      "plugin_path": "/etc/chef/ohai_plugins",
+      "hints_path": "/etc/chef/ohai/hints",
+      "plugins": {
+        "ohai": "plugins"
+      }
+    },
+    "packagecloud": {
+      "base_repo_path": "/install/repositories/",
+      "gpg_key_path": "/gpgkey",
+      "hostname_override": null,
+      "default_type": "deb"
+    },
+    "runit": {
+      "sv_bin": "/usr/bin/sv",
+      "chpst_bin": "/usr/bin/chpst",
+      "service_dir": "/etc/service",
+      "sv_dir": "/etc/sv",
+      "lsb_init_dir": "/etc/init.d",
+      "executable": "/sbin/runit",
+      "start": "start runsvdir",
+      "stop": "stop runsvdir",
+      "reload": "reload runsvdir"
+    },
+    "nginx": {
+      "version": "1.6.2",
+      "package_name": "nginx",
+      "port": "80",
+      "dir": "/etc/nginx",
+      "script_dir": "/usr/sbin",
+      "log_dir": "/var/log/nginx",
+      "log_dir_perm": "0750",
+      "binary": "/usr/sbin/nginx",
+      "default_root": "/var/www/nginx-default",
+      "ulimit": "1024",
+      "pid": "/var/run/nginx.pid",
+      "user": "www-data",
+      "init_style": "runit",
+      "upstart": {
+        "runlevels": "2345",
+        "respawn_limit": null,
+        "foreground": true
+      },
+      "group": "www-data",
+      "gzip": "on",
+      "gzip_static": "off",
+      "gzip_http_version": "1.0",
+      "gzip_comp_level": "2",
+      "gzip_proxied": "any",
+      "gzip_vary": "off",
+      "gzip_buffers": null,
+      "gzip_types": [
+        "text/plain",
+        "text/css",
+        "application/x-javascript",
+        "text/xml",
+        "application/xml",
+        "application/rss+xml",
+        "application/atom+xml",
+        "text/javascript",
+        "application/javascript",
+        "application/json",
+        "text/mathml"
+      ],
+      "gzip_min_length": 1000,
+      "gzip_disable": "MSIE [1-6]\\.",
+      "keepalive": "on",
+      "keepalive_requests": 100,
+      "keepalive_timeout": 65,
+      "worker_processes": 1,
+      "worker_connections": 1024,
+      "worker_rlimit_nofile": null,
+      "multi_accept": false,
+      "event": null,
+      "accept_mutex_delay": null,
+      "server_tokens": null,
+      "server_names_hash_bucket_size": 64,
+      "variables_hash_max_size": 1024,
+      "variables_hash_bucket_size": 64,
+      "sendfile": "on",
+      "underscores_in_headers": null,
+      "tcp_nodelay": "on",
+      "tcp_nopush": "on",
+      "access_log_options": null,
+      "error_log_options": null,
+      "disable_access_log": false,
+      "log_formats": {
+
+      },
+      "install_method": "package",
+      "default_site_enabled": false,
+      "types_hash_max_size": 2048,
+      "types_hash_bucket_size": 64,
+      "proxy_read_timeout": null,
+      "client_body_buffer_size": null,
+      "client_max_body_size": null,
+      "large_client_header_buffers": null,
+      "default": {
+        "modules": [
+
+        ]
+      },
+      "extra_configs": {
+
+      },
+      "auth_request": {
+        "url": "http://mdounin.ru/hg/ngx_http_auth_request_module/archive/ee8ff54f9b66.tar.gz",
+        "checksum": "7ab85e1c350c5a9c60ed1319c45fed144cc3c3e1"
+      },
+      "devel": {
+        "version": "0.2.18",
+        "url": "https://github.com/simpl/ngx_devel_kit/archive/v0.2.18.tar.gz",
+        "checksum": "c9c9f0a1b068d38c6c45b15d9605f1b2344dbcd45abf0764cd8e2ba92d6a3d2c"
+      },
+      "echo": {
+        "version": "0.57",
+        "url": "https://github.com/openresty/echo-nginx-module/archive/v0.57.tar.gz",
+        "checksum": "8467237ca0fae74ca7a32fbd34fc6044df307098415d48068214c9c235695a07"
+      },
+      "geoip": {
+        "path": "/srv/geoip",
+        "enable_city": true,
+        "country_dat_url": "http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz",
+        "country_dat_checksum": "79ff1099e96c2dc1c2539c9a18aaa13a9afd085cae477df60d95f1644d42bc07",
+        "city_dat_url": "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz",
+        "city_dat_checksum": "8a6467033a528f68b1a97de24d9d0ce86c8e8e83683820e16e433ddbd3f712f7",
+        "lib_version": "1.6.3",
+        "lib_url": "https://github.com/maxmind/geoip-api-c/releases/download/v1.6.3/GeoIP-1.6.3.tar.gz",
+        "lib_checksum": "e483839a81a91c3c85df89ef409fc7b526c489e0355d537861cfd1ea9534a8f2"
+      },
+      "headers_more": {
+        "version": "0.25",
+        "source_url": "https://github.com/openresty/headers-more-nginx-module/archive/v0.25.tar.gz",
+        "source_checksum": "1473f96f59dcec9d83ce65d691559993c1f80da8c0a4c0c0a30dae9f969eeabf"
+      },
+      "lua": {
+        "version": "0.8.7",
+        "url": "https://github.com/chaoslawful/lua-nginx-module/archive/v0.8.7.tar.gz",
+        "checksum": "4b9be3c159b9c884a38e044e07aaf4d06bd2893977d0b0dae02c124d8e907f93"
+      },
+      "luajit": {
+        "version": "2.0.2",
+        "url": "http://luajit.org/download/LuaJIT-2.0.2.tar.gz",
+        "checksum": "c05202974a5890e777b181908ac237625b499aece026654d7cc33607e3f46c38"
+      },
+      "naxsi": {
+        "version": "0.53-2",
+        "url": "https://github.com/nbs-system/naxsi/archive/0.53-2.tar.gz",
+        "checksum": "3eadff1d91995beae41b92733ade28091c2075a24ae37058f4d6aa90b0f4b660"
+      },
+      "openssl_source": {
+        "version": "1.0.1h",
+        "url": "http://www.openssl.org/source/openssl-1.0.1h.tar.gz"
+      },
+      "pagespeed": {
+        "version": "1.8.31.4",
+        "url": "https://github.com/pagespeed/ngx_pagespeed/archive/release-1.8.31.4-beta.tar.gz",
+        "packages": {
+          "rhel": [
+            "gcc-c++",
+            "pcre-dev",
+            "pcre-devel",
+            "zlib-devel",
+            "make"
+          ],
+          "debian": [
+            "build-essential",
+            "zlib1g-dev",
+            "libpcre3",
+            "libpcre3-dev"
+          ]
+        }
+      },
+      "psol": {
+        "url": "https://dl.google.com/dl/page-speed/psol/1.8.31.4.tar.gz"
+      },
+      "passenger": {
+        "version": "4.0.57",
+        "root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/passenger-4.0.57",
+        "ruby": "/opt/chef/embedded/bin/ruby",
+        "packages": {
+          "rhel": [
+            "ruby-devel",
+            "curl-devel"
+          ],
+          "fedora": [
+            "ruby-devel",
+            "libcurl-devel"
+          ],
+          "debian": [
+            "ruby-dev",
+            "libcurl4-gnutls-dev"
+          ]
+        },
+        "install_rake": true,
+        "spawn_method": "smart-lv2",
+        "buffer_response": "on",
+        "max_pool_size": 6,
+        "min_instances": 1,
+        "max_instances_per_app": 0,
+        "pool_idle_time": 300,
+        "max_requests": 0,
+        "gem_binary": null,
+        "nodejs": null
+      },
+      "enable_rate_limiting": false,
+      "rate_limiting_zone_name": "default",
+      "rate_limiting_backoff": "10m",
+      "rate_limit": "1r/s",
+      "upstream_repository": "http://nginx.org/packages/ubuntu",
+      "set_misc": {
+        "version": "0.24",
+        "url": "https://github.com/agentzh/set-misc-nginx-module/archive/v0.24.tar.gz",
+        "checksum": "da404a7dac5fa4a0a86f42b4ec7648b607f4cd66"
+      },
+      "socketproxy": {
+        "root": "/usr/share/nginx/apps",
+        "app_owner": "root",
+        "logname": "socketproxy",
+        "log_level": "error"
+      },
+      "source": {
+        "version": "1.6.2",
+        "prefix": "/opt/nginx-1.6.2",
+        "conf_path": "/etc/nginx/nginx.conf",
+        "sbin_path": "/opt/nginx-1.6.2/sbin/nginx",
+        "default_configure_flags": [
+          "--prefix=/opt/nginx-1.6.2",
+          "--conf-path=/etc/nginx/nginx.conf",
+          "--sbin-path=/opt/nginx-1.6.2/sbin/nginx"
+        ],
+        "url": "http://nginx.org/download/nginx-1.6.2.tar.gz",
+        "checksum": "b5608c2959d3e7ad09b20fc8f9e5bd4bc87b3bc8ba5936a513c04ed8f1391a18",
+        "modules": [
+          "nginx::http_ssl_module",
+          "nginx::http_gzip_static_module"
+        ],
+        "use_existing_user": false
+      },
+      "configure_flags": [
+
+      ],
+      "status": {
+        "port": "8090"
+      },
+      "syslog": {
+        "git_repo": "https://github.com/yaoweibin/nginx_syslog_patch.git",
+        "git_revision": "master"
+      },
+      "upload_progress": {
+        "url": "https://github.com/masterzen/nginx-upload-progress-module/tarball/v0.9.0",
+        "checksum": "3fb903dab595cf6656fa0fc5743a48daffbba2f6b5c554836be630800eaad4e2",
+        "javascript_output": true,
+        "zone_name": "proxied",
+        "zone_size": "1m"
       }
     },
     "postgresql": {
@@ -1010,7 +1347,59 @@
           }
         }
       },
-      "initdb_locale": "UTF-8"
+      "initdb_locale": "UTF-8",
+      "postgresql": {
+        "password": {
+          "postgres": "thepasswordisben"
+        }
+      }
+    },
+    "ruby_build": {
+      "git_url": "https://github.com/sstephenson/ruby-build.git",
+      "git_ref": "master",
+      "default_ruby_base_path": "/usr/local/ruby",
+      "upgrade": "none"
+    },
+    "rbenv": {
+      "git_url": "git://github.com/sstephenson/rbenv.git",
+      "git_ref": "v0.4.0",
+      "upgrade": "none",
+      "plugins": [
+
+      ],
+      "root_path": "/usr/local/rbenv",
+      "vagrant": {
+        "system_chef_solo": "/opt/ruby/bin/chef-solo"
+      },
+      "user_installs": [
+
+      ],
+      "rubies": [
+        "2.3.1"
+      ],
+      "user_rubies": [
+
+      ],
+      "gems": {
+        "2.3.1": [
+          {
+            "name": "bundler"
+          }
+        ]
+      },
+      "user_gems": {
+
+      },
+      "user_plugins": [
+
+      ],
+      "create_profiled": true,
+      "install_pkgs": [
+        "git-core",
+        "grep"
+      ],
+      "user_home_root": "/home",
+      "global": "2.3.1"
     },
     "redis-server": {
       "appendonly": "no",
@@ -1036,390 +1425,6 @@
       ],
       "timeout": 300
     },
-    "rsyslog": {
-      "default_log_dir": "/var/log",
-      "log_dir": "/srv/rsyslog",
-      "working_dir": "/var/spool/rsyslog",
-      "server": false,
-      "use_relp": false,
-      "relp_port": 20514,
-      "protocol": "tcp",
-      "bind": "*",
-      "port": 514,
-      "server_ip": null,
-      "server_search": "role:loghost",
-      "remote_logs": true,
-      "per_host_dir": "%$YEAR%/%$MONTH%/%$DAY%/%HOSTNAME%",
-      "max_message_size": "2k",
-      "preserve_fqdn": "off",
-      "high_precision_timestamps": false,
-      "repeated_msg_reduction": "on",
-      "logs_to_forward": "*.*",
-      "enable_imklog": true,
-      "config_prefix": "/etc",
-      "default_file_template": null,
-      "default_remote_template": null,
-      "rate_limit_interval": null,
-      "rate_limit_burst": null,
-      "enable_tls": false,
-      "action_queue_max_disk_space": "1G",
-      "tls_ca_file": null,
-      "tls_certificate_file": null,
-      "tls_key_file": null,
-      "tls_auth_mode": "anon",
-      "use_local_ipv4": false,
-      "allow_non_local": false,
-      "custom_remote": [
-        {
-
-        }
-      ],
-      "additional_directives": {
-
-      },
-      "service_name": "rsyslog",
-      "user": "syslog",
-      "group": "adm",
-      "priv_seperation": true,
-      "priv_user": null,
-      "priv_group": "syslog",
-      "modules": [
-        "imuxsock",
-        "imklog"
-      ],
-      "default_facility_logs": {
-        "auth,authpriv.*": "/var/log/auth.log",
-        "*.*;auth,authpriv.none": "-/var/log/syslog",
-        "daemon.*": "-/var/log/daemon.log",
-        "kern.*": "-/var/log/kern.log",
-        "mail.*": "-/var/log/mail.log",
-        "user.*": "-/var/log/user.log",
-        "mail.info": "-/var/log/mail.info",
-        "mail.warn": "-/var/log/mail.warn",
-        "mail.err": "/var/log/mail.err",
-        "news.crit": "/var/log/news/news.crit",
-        "news.err": "/var/log/news/news.err",
-        "news.notice": "-/var/log/news/news.notice",
-        "*.=debug;auth,authpriv.none;news.none;mail.none": "-/var/log/debug",
-        "*.=info;*.=notice;*.=warn;auth,authpriv.none;cron,daemon.none;mail,news.none": "-/var/log/messages",
-        "*.emerg": ":omusrmsg:*"
-      }
-    },
-    "bluepill": {
-      "bin": "/opt/chef/embedded/bin/bluepill",
-      "logfile": "/var/log/bluepill.log",
-      "pid_dir": "/var/run/bluepill",
-      "state_dir": "/var/lib/bluepill",
-      "group": 0,
-      "use_rsyslog": false,
-      "init_dir": "/etc/init.d",
-      "conf_dir": "/etc/bluepill",
-      "defaults_dir": "/etc/default"
-    },
-    "ohai": {
-      "plugin_path": "/etc/chef/ohai_plugins",
-      "hints_path": "/etc/chef/ohai/hints",
-      "plugins": {
-        "ohai": "plugins"
-      }
-    },
-    "packagecloud": {
-      "base_repo_path": "/install/repositories/",
-      "gpg_key_path": "/gpgkey",
-      "hostname_override": null,
-      "default_type": "deb"
-    },
-    "runit": {
-      "sv_bin": "/usr/bin/sv",
-      "chpst_bin": "/usr/bin/chpst",
-      "service_dir": "/etc/service",
-      "sv_dir": "/etc/sv",
-      "lsb_init_dir": "/etc/init.d",
-      "executable": "/sbin/runit",
-      "start": "start runsvdir",
-      "stop": "stop runsvdir",
-      "reload": "reload runsvdir"
-    },
-    "nginx": {
-      "version": "1.6.2",
-      "package_name": "nginx",
-      "port": "80",
-      "dir": "/etc/nginx",
-      "script_dir": "/usr/sbin",
-      "log_dir": "/var/log/nginx",
-      "log_dir_perm": "0750",
-      "binary": "/usr/sbin/nginx",
-      "default_root": "/var/www/nginx-default",
-      "ulimit": "1024",
-      "pid": "/var/run/nginx.pid",
-      "user": "www-data",
-      "init_style": "runit",
-      "upstart": {
-        "runlevels": "2345",
-        "respawn_limit": null,
-        "foreground": true
-      },
-      "group": "www-data",
-      "gzip": "on",
-      "gzip_static": "off",
-      "gzip_http_version": "1.0",
-      "gzip_comp_level": "2",
-      "gzip_proxied": "any",
-      "gzip_vary": "off",
-      "gzip_buffers": null,
-      "gzip_types": [
-        "text/plain",
-        "text/css",
-        "application/x-javascript",
-        "text/xml",
-        "application/xml",
-        "application/rss+xml",
-        "application/atom+xml",
-        "text/javascript",
-        "application/javascript",
-        "application/json",
-        "text/mathml"
-      ],
-      "gzip_min_length": 1000,
-      "gzip_disable": "MSIE [1-6]\\.",
-      "keepalive": "on",
-      "keepalive_requests": 100,
-      "keepalive_timeout": 65,
-      "worker_processes": 1,
-      "worker_connections": 1024,
-      "worker_rlimit_nofile": null,
-      "multi_accept": false,
-      "event": null,
-      "accept_mutex_delay": null,
-      "server_tokens": null,
-      "server_names_hash_bucket_size": 64,
-      "variables_hash_max_size": 1024,
-      "variables_hash_bucket_size": 64,
-      "sendfile": "on",
-      "underscores_in_headers": null,
-      "tcp_nodelay": "on",
-      "tcp_nopush": "on",
-      "access_log_options": null,
-      "error_log_options": null,
-      "disable_access_log": false,
-      "log_formats": {
-
-      },
-      "install_method": "package",
-      "default_site_enabled": false,
-      "types_hash_max_size": 2048,
-      "types_hash_bucket_size": 64,
-      "proxy_read_timeout": null,
-      "client_body_buffer_size": null,
-      "client_max_body_size": null,
-      "large_client_header_buffers": null,
-      "default": {
-        "modules": [
-
-        ]
-      },
-      "extra_configs": {
-
-      },
-      "auth_request": {
-        "url": "http://mdounin.ru/hg/ngx_http_auth_request_module/archive/ee8ff54f9b66.tar.gz",
-        "checksum": "7ab85e1c350c5a9c60ed1319c45fed144cc3c3e1"
-      },
-      "devel": {
-        "version": "0.2.18",
-        "url": "https://github.com/simpl/ngx_devel_kit/archive/v0.2.18.tar.gz",
-        "checksum": "c9c9f0a1b068d38c6c45b15d9605f1b2344dbcd45abf0764cd8e2ba92d6a3d2c"
-      },
-      "echo": {
-        "version": "0.57",
-        "url": "https://github.com/openresty/echo-nginx-module/archive/v0.57.tar.gz",
-        "checksum": "8467237ca0fae74ca7a32fbd34fc6044df307098415d48068214c9c235695a07"
-      },
-      "geoip": {
-        "path": "/srv/geoip",
-        "enable_city": true,
-        "country_dat_url": "http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz",
-        "country_dat_checksum": "79ff1099e96c2dc1c2539c9a18aaa13a9afd085cae477df60d95f1644d42bc07",
-        "city_dat_url": "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz",
-        "city_dat_checksum": "8a6467033a528f68b1a97de24d9d0ce86c8e8e83683820e16e433ddbd3f712f7",
-        "lib_version": "1.6.3",
-        "lib_url": "https://github.com/maxmind/geoip-api-c/releases/download/v1.6.3/GeoIP-1.6.3.tar.gz",
-        "lib_checksum": "e483839a81a91c3c85df89ef409fc7b526c489e0355d537861cfd1ea9534a8f2"
-      },
-      "headers_more": {
-        "version": "0.25",
-        "source_url": "https://github.com/openresty/headers-more-nginx-module/archive/v0.25.tar.gz",
-        "source_checksum": "1473f96f59dcec9d83ce65d691559993c1f80da8c0a4c0c0a30dae9f969eeabf"
-      },
-      "lua": {
-        "version": "0.8.7",
-        "url": "https://github.com/chaoslawful/lua-nginx-module/archive/v0.8.7.tar.gz",
-        "checksum": "4b9be3c159b9c884a38e044e07aaf4d06bd2893977d0b0dae02c124d8e907f93"
-      },
-      "luajit": {
-        "version": "2.0.2",
-        "url": "http://luajit.org/download/LuaJIT-2.0.2.tar.gz",
-        "checksum": "c05202974a5890e777b181908ac237625b499aece026654d7cc33607e3f46c38"
-      },
-      "naxsi": {
-        "version": "0.53-2",
-        "url": "https://github.com/nbs-system/naxsi/archive/0.53-2.tar.gz",
-        "checksum": "3eadff1d91995beae41b92733ade28091c2075a24ae37058f4d6aa90b0f4b660"
-      },
-      "openssl_source": {
-        "version": "1.0.1h",
-        "url": "http://www.openssl.org/source/openssl-1.0.1h.tar.gz"
-      },
-      "pagespeed": {
-        "version": "1.8.31.4",
-        "url": "https://github.com/pagespeed/ngx_pagespeed/archive/release-1.8.31.4-beta.tar.gz",
-        "packages": {
-          "rhel": [
-            "gcc-c++",
-            "pcre-dev",
-            "pcre-devel",
-            "zlib-devel",
-            "make"
-          ],
-          "debian": [
-            "build-essential",
-            "zlib1g-dev",
-            "libpcre3",
-            "libpcre3-dev"
-          ]
-        }
-      },
-      "psol": {
-        "url": "https://dl.google.com/dl/page-speed/psol/1.8.31.4.tar.gz"
-      },
-      "passenger": {
-        "version": "4.0.57",
-        "root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/passenger-4.0.57",
-        "ruby": "/opt/chef/embedded/bin/ruby",
-        "packages": {
-          "rhel": [
-            "ruby-devel",
-            "curl-devel"
-          ],
-          "fedora": [
-            "ruby-devel",
-            "libcurl-devel"
-          ],
-          "debian": [
-            "ruby-dev",
-            "libcurl4-gnutls-dev"
-          ]
-        },
-        "install_rake": true,
-        "spawn_method": "smart-lv2",
-        "buffer_response": "on",
-        "max_pool_size": 6,
-        "min_instances": 1,
-        "max_instances_per_app": 0,
-        "pool_idle_time": 300,
-        "max_requests": 0,
-        "gem_binary": null,
-        "nodejs": null
-      },
-      "enable_rate_limiting": false,
-      "rate_limiting_zone_name": "default",
-      "rate_limiting_backoff": "10m",
-      "rate_limit": "1r/s",
-      "upstream_repository": "http://nginx.org/packages/ubuntu",
-      "set_misc": {
-        "version": "0.24",
-        "url": "https://github.com/agentzh/set-misc-nginx-module/archive/v0.24.tar.gz",
-        "checksum": "da404a7dac5fa4a0a86f42b4ec7648b607f4cd66"
-      },
-      "socketproxy": {
-        "root": "/usr/share/nginx/apps",
-        "app_owner": "root",
-        "logname": "socketproxy",
-        "log_level": "error"
-      },
-      "source": {
-        "version": "1.6.2",
-        "prefix": "/opt/nginx-1.6.2",
-        "conf_path": "/etc/nginx/nginx.conf",
-        "sbin_path": "/opt/nginx-1.6.2/sbin/nginx",
-        "default_configure_flags": [
-          "--prefix=/opt/nginx-1.6.2",
-          "--conf-path=/etc/nginx/nginx.conf",
-          "--sbin-path=/opt/nginx-1.6.2/sbin/nginx"
-        ],
-        "url": "http://nginx.org/download/nginx-1.6.2.tar.gz",
-        "checksum": "b5608c2959d3e7ad09b20fc8f9e5bd4bc87b3bc8ba5936a513c04ed8f1391a18",
-        "modules": [
-          "nginx::http_ssl_module",
-          "nginx::http_gzip_static_module"
-        ],
-        "use_existing_user": false
-      },
-      "configure_flags": [
-
-      ],
-      "status": {
-        "port": "8090"
-      },
-      "syslog": {
-        "git_repo": "https://github.com/yaoweibin/nginx_syslog_patch.git",
-        "git_revision": "master"
-      },
-      "upload_progress": {
-        "url": "https://github.com/masterzen/nginx-upload-progress-module/tarball/v0.9.0",
-        "checksum": "3fb903dab595cf6656fa0fc5743a48daffbba2f6b5c554836be630800eaad4e2",
-        "javascript_output": true,
-        "zone_name": "proxied",
-        "zone_size": "1m"
-      }
-    },
-    "ruby_build": {
-      "git_url": "https://github.com/sstephenson/ruby-build.git",
-      "git_ref": "master",
-      "default_ruby_base_path": "/usr/local/ruby",
-      "upgrade": "none"
-    },
-    "rbenv": {
-      "git_url": "git://github.com/sstephenson/rbenv.git",
-      "git_ref": "v0.4.0",
-      "upgrade": "none",
-      "plugins": [
-
-      ],
-      "root_path": "/usr/local/rbenv",
-      "vagrant": {
-        "system_chef_solo": "/opt/ruby/bin/chef-solo"
-      },
-      "user_installs": [
-
-      ],
-      "rubies": [
-        "2.1.2"
-      ],
-      "user_rubies": [
-
-      ],
-      "gems": {
-        "2.1.2": [
-          {
-            "name": "bundler"
-          }
-        ]
-      },
-      "user_gems": {
-
-      },
-      "user_plugins": [
-
-      ],
-      "create_profiled": true,
-      "install_pkgs": [
-        "git-core",
-        "grep"
-      ],
-      "user_home_root": "/home",
-      "global": "2.1.2"
-    },
     "monit_address": "monit.devops.local",
     "openssh": {
       "server": {
@@ -1434,12 +1439,6 @@
   },
   "automatic": {
     "languages": {
-      "c": {
-        "gcc": {
-          "version": "5.3.1",
-          "description": "gcc version 5.3.1 20160413 (Ubuntu 5.3.1-14ubuntu2) "
-        }
-      },
       "ruby": {
         "platform": "x86_64-linux",
         "version": "2.1.8",
@@ -1473,23 +1472,23 @@
         "free": "262140kB"
       },
       "total": "1015184kB",
-      "free": "241332kB",
-      "buffers": "37864kB",
-      "cached": "443188kB",
-      "active": "361180kB",
-      "inactive": "273540kB",
-      "dirty": "1792kB",
+      "free": "295656kB",
+      "buffers": "20908kB",
+      "cached": "305680kB",
+      "active": "393888kB",
+      "inactive": "210164kB",
+      "dirty": "15164kB",
       "writeback": "0kB",
-      "anon_pages": "153664kB",
-      "mapped": "28728kB",
-      "slab": "87808kB",
-      "slab_reclaimable": "70352kB",
-      "slab_unreclaim": "17456kB",
-      "page_tables": "2892kB",
+      "anon_pages": "277472kB",
+      "mapped": "22800kB",
+      "slab": "64172kB",
+      "slab_reclaimable": "47172kB",
+      "slab_unreclaim": "17000kB",
+      "page_tables": "2820kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "769732kB",
-      "committed_as": "353688kB",
+      "committed_as": "423872kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "0kB",
       "vmalloc_chunk": "0kB"
@@ -1601,14 +1600,14 @@
     "filesystem": {
       "/dev/root": {
         "kb_size": "24505644",
-        "kb_used": "1107116",
-        "kb_available": "22136960",
-        "percent_used": "5%",
+        "kb_used": "848492",
+        "kb_available": "22395584",
+        "percent_used": "4%",
         "mount": "/",
         "total_inodes": "1520000",
-        "inodes_used": "53028",
-        "inodes_available": "1466972",
-        "inodes_percent_used": "4%"
+        "inodes_used": "44064",
+        "inodes_available": "1475936",
+        "inodes_percent_used": "3%"
       },
       "devtmpfs": {
         "kb_size": "505728",
@@ -1696,7 +1695,7 @@
         ]
       },
       "cgroup": {
-        "mount": "/sys/fs/cgroup/debug",
+        "mount": "/sys/fs/cgroup/perf_event",
         "fs_type": "cgroup",
         "mount_options": [
           "rw",
@@ -1704,21 +1703,15 @@
           "nodev",
           "noexec",
           "relatime",
-          "debug"
+          "perf_event"
         ]
       },
-      "systemd-1": {
-        "mount": "/proc/sys/fs/binfmt_misc",
-        "fs_type": "autofs",
+      "debugfs": {
+        "mount": "/sys/kernel/debug",
+        "fs_type": "debugfs",
         "mount_options": [
           "rw",
-          "relatime",
-          "fd=28",
-          "pgrp=1",
-          "timeout=0",
-          "minproto=5",
-          "maxproto=5",
-          "direct"
+          "relatime"
         ]
       },
       "mqueue": {
@@ -1729,12 +1722,18 @@
           "relatime"
         ]
       },
-      "debugfs": {
-        "mount": "/sys/kernel/debug",
-        "fs_type": "debugfs",
+      "systemd-1": {
+        "mount": "/proc/sys/fs/binfmt_misc",
+        "fs_type": "autofs",
         "mount_options": [
           "rw",
-          "relatime"
+          "relatime",
+          "fd=33",
+          "pgrp=1",
+          "timeout=0",
+          "minproto=5",
+          "maxproto=5",
+          "direct"
         ]
       },
       "fusectl": {
@@ -1755,7 +1754,7 @@
       },
       "/dev/sdb": {
         "fs_type": "swap",
-        "uuid": "b6ff4e56-e646-4001-a2c6-fb57421910d1"
+        "uuid": "5092eaad-3f60-4cd5-9b7a-4c748d3bf220"
       }
     },
     "network": {
@@ -1793,7 +1792,7 @@
           ],
           "encapsulation": "Ethernet",
           "addresses": {
-            "8E:66:9C:52:64:37": {
+            "0E:D4:2B:0E:82:A1": {
               "family": "lladdr"
             }
           },
@@ -1870,13 +1869,10 @@
             }
           ],
           "neighbour_inet6": {
-            "fe80::1": "00:05:73:a0:0f:ff",
-            "fe80::8678:acff:fe0d:8f41": "84:78:ac:0d:8f:41",
             "2a01:7e00::8678:acff:fe5a:1a41": "84:78:ac:5a:1a:41",
-            "fe80::f03c:91ff:fe55:c76": "f2:3c:91:55:0c:76",
-            "2a01:7e00::8678:acff:fe0d:8f41": "84:78:ac:0d:8f:41",
-            "fe80::8678:acff:fe5a:1a41": "84:78:ac:5a:1a:41",
-            "2a01:7e00:1::b24f:af37": "f2:3c:91:55:0c:76"
+            "fe80::8678:acff:fe0d:8f41": "84:78:ac:0d:8f:41",
+            "fe80::1": "00:05:73:a0:0f:ff",
+            "fe80::8678:acff:fe5a:1a41": "84:78:ac:5a:1a:41"
           }
         },
         "teql0": {
@@ -1968,16 +1964,16 @@
           "lo": {
             "tx": {
               "queuelen": "1",
-              "bytes": "5224188",
-              "packets": "7783",
+              "bytes": "3390747",
+              "packets": "6958",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "5224188",
-              "packets": "7783",
+              "bytes": "3390747",
+              "packets": "6958",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -2004,16 +2000,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "2431648",
-              "packets": "10834",
+              "bytes": "1519647",
+              "packets": "7502",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "111274836",
-              "packets": "15978",
+              "bytes": "58491949",
+              "packets": "11876",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -2187,10 +2183,10 @@
     "ipaddress": "139.162.229.194",
     "macaddress": "F2:3C:91:0A:86:97",
     "ip6address": "2a01:7e00::f03c:91ff:fe0a:8697",
-    "uptime_seconds": 2302,
-    "uptime": "38 minutes 22 seconds",
-    "idletime_seconds": 2184,
-    "idletime": "36 minutes 24 seconds",
+    "uptime_seconds": 3156,
+    "uptime": "52 minutes 36 seconds",
+    "idletime_seconds": 3115,
+    "idletime": "51 minutes 55 seconds",
     "dmi": {
       "dmidecode_version": "3.0",
       "smbios_version": "2.8",
@@ -2534,20 +2530,6 @@
           "uid": 108,
           "shell": "/usr/sbin/nologin",
           "gecos": ""
-        },
-        "deploy": {
-          "dir": "/home/deploy",
-          "gid": 1000,
-          "uid": 1000,
-          "shell": "/bin/bash",
-          "gecos": ""
-        },
-        "ntp": {
-          "dir": "/home/ntp",
-          "gid": 116,
-          "uid": 109,
-          "shell": "/bin/false",
-          "gecos": ""
         }
       },
       "group": {
@@ -2874,24 +2856,6 @@
           "members": [
 
           ]
-        },
-        "deploy": {
-          "gid": 1000,
-          "members": [
-
-          ]
-        },
-        "sysadmin": {
-          "gid": 2300,
-          "members": [
-            "deploy"
-          ]
-        },
-        "ntp": {
-          "gid": 116,
-          "members": [
-
-          ]
         }
       }
     },
@@ -2903,15 +2867,15 @@
       "provider": "linode",
       "public_ipv4": "139.162.229.194"
     },
-    "ohai_time": 1465830779.9654584,
+    "ohai_time": 1466965500.2725134,
     "root_group": "root",
     "keys": {
       "ssh": {
-        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDFTYbqgt3wnM4x7l0kJLRyu7lkxG8ujgqBEAlRnsaOSEGKN5ssn/cSOVZBwtl2R22YrwhmAPrv0Rh0faYMCpUtH+zHoCbF7apjJJehtU+J3qila1Lu83rlUJpDWHk/uOAmRXF/JyckmY63DaGDyRNOTxRPHwhUVCUuQbLGLlNzpABDcTKVV9nzxa4Gjh7kHEWka4gU8I0AQM8t1o4Gvy+xNWuSN/htHVB5wsfofivWrPXcvzylDjhh5WZqx6A73TSf/zPBIUD1tP91RKHIcfTM2w7TkVkFlhd+uPxNaynLaLTU5y55T3WerWZjREWW9xiXUDhB3EwXuqQNWM2CTXSP",
-        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAJqsJKLbjkilSZo7CHr7aEwi6x2yajNosND86yekPdOLSTvzywD6vZX+fF4ocTCELc6jGxB/Jq5Ux1MyO2viwswQ5ppn38ENwXLADwIpPak22xPsXvoOVHN3NmIeAeApsfjZLfiuAlokEibzUPxxhE0Lquptl+1akZ/BCdJCuxRTAAAAFQCw9wLpzlKAn/vaeTy1USOrDBoHrQAAAIBGsFIQHaBRu2vc/snN8yhJxJakc5N2nRUjD8xVubr46tMUcxsCH5MIjirEv8Cz+rFu/rYEbjSNlTF4XzHANWPsO/ySty4SbA8Zt8uMFljxwpHlg2v6ZiNkVOHjV44+/NS+EAcl/+0Kcw5TlCLwgW03wvOwWGu6IN+60o1BVuTdgAAAAIAK2XpmVVX9r6e2rnRFM3CJOHKQiiO/alVioqocxop/hWnTwzVvgor1cw5Ud+PVrcCLktsHQIAOiQ/JmFInAn+XZP8XIZVMlBpudkmJSZ7QzhFHiT4g6/DNLq9dZ6qyjQD3zxuRmrhgUV027pOVzbveb9Pp/zj68GTYH5+9LtD6iw==",
-        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJPDxWugEOIgw2kFbr8uXQc3bVzHMXacpuNzkHrzYa3pz6YbW38ZurnPLrWR5hKuMay6hCao2dqyTCwyXmr4gCI=",
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC66zB4NfAPEgs8wnxq+kPXmVTSjhgcu+Ak8sHWxULlI054FzSCDILuXUM2F0L0ivPK6tGZCBppAPnPeotVYUvVlRGY+sISKZT8YChzu6DmE/czRtRQYVxShKKSNzTI7GxsZqCxTzzrVm1y7MG0j1vhm9ijFMWphI6SqK6zWl6HQFU61ciRgCtqC8QmEIvqgx7AdEQ70WhaPMp/Pqfa8sOTtD5CWIQGoMmH4MmVTzG93yjOVGmMp7XMv5LynwWorkQ+hTSbmqFLdnS5v8Hz6hoU3oZxZC2t9ZoEEmzyGPcGxsbyknVgyde9FI3VLgps+1tyf0tHhuLBPcuWn4OZxwHR",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAMe/7VNpozIQknaAWkhYNvjUlrCrtt3Da9v64kAjhcjXxbvRlA48Pq8hNj4xBZniZyCr5cI703WOd5ndiIIjXL0WrZU/C4bUvP4cJ7XMTb1V1LS/YCwvZvNKT+Yg6phORM5nDwrWHxd2k5IBHYHgock0At/gpD277UNkqzASp7vbAAAAFQCDFi3lI0WbILUEkwZBE8mGmoOtLQAAAIEAll2B5M8oGeCKlhGqvB6Bk9I+tqmvObSw9jAvTPxNcr2P4B4Rf567ah0yDy6N0PwipJFwvR8KGP5mrHGkSeQWm+4Fiz4U4k3wet3l8rdZxNK88YihqMhKPlmpaG7ehFrxi24KenUtZRsEEvt5QdPRMbiyIX9ManQf+gVNNet+xDcAAACAAdsk6G1tRBogTmWckpBmDEBatXtGt4VEN9Hi5AqWTSwBHlu1bIMcf8OOl3bGUGxnlnP/PoYOmpKgnzmw+lC9LQwUhXDJZotQC2DtkEJZ/EbmqPgm2SEXzHcxyoiglePx70Wxu863aq/wLn9eNjoqBK/eOvDqCbhy/k17+LEwT0U=",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEGI2NHBm1yFnNyfo+js9v8xGbIGCtF+cSNCmlCGsAf/BTNTH1dQ+qov8+W4NacYMkqmnT5r9iddQvFF0SzH8t4=",
         "host_ecdsa_type": "ecdsa-sha2-nistp256",
-        "host_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIMVEyStsLqXH4B32bgZnG1ZqNzqpj8kidrQ9vyQkzdns"
+        "host_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIH5I6kgqzy2fCI2ILghlvdWYDtdPAbxFIXxlTuo1hTk6"
       }
     },
     "command": {
@@ -2946,15 +2910,6 @@
       "apt-utils": {
         "version": "1.2.10ubuntu1"
       },
-      "autoconf": {
-        "version": "2.69-9"
-      },
-      "automake": {
-        "version": "1:1.15-4ubuntu1"
-      },
-      "autotools-dev": {
-        "version": "20150820.1"
-      },
       "base-files": {
         "version": "9.4ubuntu4"
       },
@@ -2970,23 +2925,11 @@
       "bind9-host": {
         "version": "1:9.10.3.dfsg.P4-8"
       },
-      "binutils": {
-        "version": "2.26-8ubuntu2"
-      },
-      "binutils-doc": {
-        "version": "2.26-8ubuntu2"
-      },
-      "bison": {
-        "version": "2:3.0.4.dfsg-1"
-      },
       "bsdmainutils": {
         "version": "9.0.6ubuntu3"
       },
       "bsdutils": {
         "version": "1:2.27.1-6ubuntu3"
-      },
-      "build-essential": {
-        "version": "12.1ubuntu2"
       },
       "busybox-initramfs": {
         "version": "1:1.22.0-15ubuntu1"
@@ -3020,12 +2963,6 @@
       },
       "cpio": {
         "version": "2.11+dfsg-5ubuntu1"
-      },
-      "cpp": {
-        "version": "4:5.3.1-1ubuntu1"
-      },
-      "cpp-5": {
-        "version": "5.3.1-14ubuntu2"
       },
       "cron": {
         "version": "3.0pl1-128ubuntu2"
@@ -3078,9 +3015,6 @@
       "dpkg": {
         "version": "1.18.4ubuntu1"
       },
-      "dpkg-dev": {
-        "version": "1.18.4ubuntu1"
-      },
       "e2fslibs:amd64": {
         "version": "1.42.13-1ubuntu1"
       },
@@ -3096,20 +3030,11 @@
       "emacsen-common": {
         "version": "2.0.8"
       },
-      "fail2ban": {
-        "version": "0.9.3-1"
-      },
-      "fakeroot": {
-        "version": "1.20.2-1ubuntu1"
-      },
       "file": {
         "version": "1:5.25-2ubuntu1"
       },
       "findutils": {
         "version": "4.6.0+git+20160126-2"
-      },
-      "flex": {
-        "version": "2.6.0-11"
       },
       "friendly-recovery": {
         "version": "0.2.31"
@@ -3120,18 +3045,6 @@
       "fuse": {
         "version": "2.9.4-1ubuntu3"
       },
-      "g++": {
-        "version": "4:5.3.1-1ubuntu1"
-      },
-      "g++-5": {
-        "version": "5.3.1-14ubuntu2"
-      },
-      "gcc": {
-        "version": "4:5.3.1-1ubuntu1"
-      },
-      "gcc-5": {
-        "version": "5.3.1-14ubuntu2"
-      },
       "gcc-5-base:amd64": {
         "version": "5.3.1-14ubuntu2"
       },
@@ -3140,9 +3053,6 @@
       },
       "geoip-database": {
         "version": "20160408-1"
-      },
-      "gettext": {
-        "version": "0.19.7-2ubuntu3"
       },
       "gettext-base": {
         "version": "0.19.7-2ubuntu3"
@@ -3270,15 +3180,6 @@
       "libacl1:amd64": {
         "version": "2.2.52-3"
       },
-      "libalgorithm-diff-perl": {
-        "version": "1.19.03-1"
-      },
-      "libalgorithm-diff-xs-perl": {
-        "version": "0.04-4build1"
-      },
-      "libalgorithm-merge-perl": {
-        "version": "0.08-3"
-      },
       "libapparmor-perl": {
         "version": "2.10.95-0ubuntu2"
       },
@@ -3291,23 +3192,14 @@
       "libapt-pkg5.0:amd64": {
         "version": "1.2.10ubuntu1"
       },
-      "libasan2:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
       "libasn1-8-heimdal:amd64": {
         "version": "1.7~git20150920+dfsg-4ubuntu1"
-      },
-      "libasprintf-dev:amd64": {
-        "version": "0.19.7-2ubuntu3"
       },
       "libasprintf0v5:amd64": {
         "version": "0.19.7-2ubuntu3"
       },
       "libatm1:amd64": {
         "version": "1:2.5.1-1.5"
-      },
-      "libatomic1:amd64": {
-        "version": "5.3.1-14ubuntu2"
       },
       "libattr1:amd64": {
         "version": "1:2.4.47-2"
@@ -3321,9 +3213,6 @@
       "libbind9-140:amd64": {
         "version": "1:9.10.3.dfsg.P4-8"
       },
-      "libbison-dev:amd64": {
-        "version": "2:3.0.4.dfsg-1"
-      },
       "libblkid1:amd64": {
         "version": "2.27.1-6ubuntu3"
       },
@@ -3336,13 +3225,7 @@
       "libc-bin": {
         "version": "2.23-0ubuntu3"
       },
-      "libc-dev-bin": {
-        "version": "2.23-0ubuntu3"
-      },
       "libc6:amd64": {
-        "version": "2.23-0ubuntu3"
-      },
-      "libc6-dev:amd64": {
         "version": "2.23-0ubuntu3"
       },
       "libcap-ng0:amd64": {
@@ -3354,17 +3237,8 @@
       "libcap2-bin": {
         "version": "1:2.24-12"
       },
-      "libcc1-0:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
-      "libcilkrts5:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
       "libcomerr2:amd64": {
         "version": "1.42.13-1ubuntu1"
-      },
-      "libcroco3:amd64": {
-        "version": "0.6.11-1"
       },
       "libcryptsetup4:amd64": {
         "version": "2:1.6.6-5ubuntu2"
@@ -3396,9 +3270,6 @@
       "libdns162:amd64": {
         "version": "1:9.10.3.dfsg.P4-8"
       },
-      "libdpkg-perl": {
-        "version": "1.18.4ubuntu1"
-      },
       "libdrm2:amd64": {
         "version": "2.4.67-1"
       },
@@ -3414,29 +3285,17 @@
       "libexpat1:amd64": {
         "version": "2.1.0-7"
       },
-      "libfakeroot:amd64": {
-        "version": "1.20.2-1ubuntu1"
-      },
       "libfdisk1:amd64": {
         "version": "2.27.1-6ubuntu3"
       },
       "libffi6:amd64": {
         "version": "3.2.1-4"
       },
-      "libfile-fcntllock-perl": {
-        "version": "0.22-3"
-      },
-      "libfl-dev:amd64": {
-        "version": "2.6.0-11"
-      },
       "libfribidi0:amd64": {
         "version": "0.19.7-1"
       },
       "libfuse2:amd64": {
         "version": "2.9.4-1ubuntu3"
-      },
-      "libgcc-5-dev:amd64": {
-        "version": "5.3.1-14ubuntu2"
       },
       "libgcc1:amd64": {
         "version": "1:6.0.1-0ubuntu1"
@@ -3449,12 +3308,6 @@
       },
       "libgeoip1:amd64": {
         "version": "1.6.9-1"
-      },
-      "libgettextpo-dev:amd64": {
-        "version": "0.19.7-2ubuntu3"
-      },
-      "libgettextpo0:amd64": {
-        "version": "0.19.7-2ubuntu3"
       },
       "libgirepository-1.0-1:amd64": {
         "version": "1.46.0-3ubuntu1"
@@ -3473,9 +3326,6 @@
       },
       "libgnutls30:amd64": {
         "version": "3.4.10-4ubuntu1"
-      },
-      "libgomp1:amd64": {
-        "version": "5.3.1-14ubuntu2"
       },
       "libgpg-error0:amd64": {
         "version": "1.21-2ubuntu1"
@@ -3522,12 +3372,6 @@
       "libisccfg140:amd64": {
         "version": "1:9.10.3.dfsg.P4-8"
       },
-      "libisl15:amd64": {
-        "version": "0.16.1-1"
-      },
-      "libitm1:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
       "libjson-c2:amd64": {
         "version": "0.11-4ubuntu2"
       },
@@ -3558,9 +3402,6 @@
       "liblocale-gettext-perl": {
         "version": "1.07-1build1"
       },
-      "liblsan0:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
       "liblwres141:amd64": {
         "version": "1:9.10.3.dfsg.P4-8"
       },
@@ -3579,22 +3420,10 @@
       "libmount1:amd64": {
         "version": "2.27.1-6ubuntu3"
       },
-      "libmpc3:amd64": {
-        "version": "1.0.3-1"
-      },
       "libmpdec2:amd64": {
         "version": "2.4.2-1"
       },
-      "libmpfr4:amd64": {
-        "version": "3.1.4-1"
-      },
-      "libmpx0:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
       "libncurses5:amd64": {
-        "version": "6.0+20160213-1ubuntu1"
-      },
-      "libncurses5-dev:amd64": {
         "version": "6.0+20160213-1ubuntu1"
       },
       "libncursesw5:amd64": {
@@ -3617,9 +3446,6 @@
       },
       "libnuma1:amd64": {
         "version": "2.0.11-1ubuntu1"
-      },
-      "libopts25:amd64": {
-        "version": "1:5.18.7-3"
       },
       "libp11-kit0:amd64": {
         "version": "0.23.2-3"
@@ -3650,9 +3476,6 @@
       },
       "libpcre3:amd64": {
         "version": "2:8.38-3.1"
-      },
-      "libperl5.22:amd64": {
-        "version": "5.22.1-9"
       },
       "libpipeline1:amd64": {
         "version": "1.4.1-2"
@@ -3690,9 +3513,6 @@
       "libpython3.5-stdlib:amd64": {
         "version": "3.5.1-10"
       },
-      "libquadmath0:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
       "libreadline6:amd64": {
         "version": "6.3-8ubuntu2"
       },
@@ -3729,9 +3549,6 @@
       "libsepol1:amd64": {
         "version": "2.4-2"
       },
-      "libsigsegv2:amd64": {
-        "version": "2.10-4"
-      },
       "libslang2:amd64": {
         "version": "2.3.0-2ubuntu1"
       },
@@ -3746,9 +3563,6 @@
       },
       "libssl1.0.0:amd64": {
         "version": "1.0.2g-1ubuntu4"
-      },
-      "libstdc++-5-dev:amd64": {
-        "version": "5.3.1-14ubuntu2"
       },
       "libstdc++6:amd64": {
         "version": "5.3.1-14ubuntu2"
@@ -3768,23 +3582,11 @@
       "libtext-wrapi18n-perl": {
         "version": "0.06-7.1"
       },
-      "libtinfo-dev:amd64": {
-        "version": "6.0+20160213-1ubuntu1"
-      },
       "libtinfo5:amd64": {
         "version": "6.0+20160213-1ubuntu1"
       },
-      "libtsan0:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
-      "libubsan0:amd64": {
-        "version": "5.3.1-14ubuntu2"
-      },
       "libudev1:amd64": {
         "version": "229-4ubuntu4"
-      },
-      "libunistring0:amd64": {
-        "version": "0.9.3-5.2ubuntu1"
       },
       "libusb-0.1-4:amd64": {
         "version": "2:0.1.12-28"
@@ -3834,9 +3636,6 @@
       "linux-base": {
         "version": "4.0ubuntu1"
       },
-      "linux-libc-dev:amd64": {
-        "version": "4.4.0-21.37"
-      },
       "locales": {
         "version": "2.23-0ubuntu3"
       },
@@ -3861,12 +3660,6 @@
       "ltrace": {
         "version": "0.7.3-5.1ubuntu4"
       },
-      "m4": {
-        "version": "1.4.17-5"
-      },
-      "make": {
-        "version": "4.1-6"
-      },
       "makedev": {
         "version": "2.3.1-93ubuntu1"
       },
@@ -3874,9 +3667,6 @@
         "version": "2.7.5-1"
       },
       "manpages": {
-        "version": "4.04-2"
-      },
-      "manpages-dev": {
         "version": "4.04-2"
       },
       "mawk": {
@@ -3887,9 +3677,6 @@
       },
       "mlocate": {
         "version": "0.26-1ubuntu2"
-      },
-      "monit": {
-        "version": "1:5.16-2"
       },
       "mount": {
         "version": "2.27.1-6ubuntu3"
@@ -3924,12 +3711,6 @@
       "ntfs-3g": {
         "version": "1:2015.3.14AR.1-1build1"
       },
-      "ntp": {
-        "version": "1:4.2.8p4+dfsg-3ubuntu5"
-      },
-      "ntpdate": {
-        "version": "1:4.2.8p4+dfsg-3ubuntu5"
-      },
       "openssh-client": {
         "version": "1:7.2p2-4"
       },
@@ -3948,19 +3729,10 @@
       "passwd": {
         "version": "1:4.2-3.1ubuntu5"
       },
-      "patch": {
-        "version": "2.7.5-1"
-      },
       "pciutils": {
         "version": "1:3.3.1-1.1ubuntu1"
       },
-      "perl": {
-        "version": "5.22.1-9"
-      },
       "perl-base": {
-        "version": "5.22.1-9"
-      },
-      "perl-modules-5.22": {
         "version": "5.22.1-9"
       },
       "plymouth": {
@@ -4026,17 +3798,11 @@
       "python3-pkg-resources": {
         "version": "20.7.0-1"
       },
-      "python3-pyinotify": {
-        "version": "0.9.6-0fakesync1"
-      },
       "python3-requests": {
         "version": "2.9.1-3"
       },
       "python3-six": {
         "version": "1.10.0-3"
-      },
-      "python3-systemd": {
-        "version": "231-2build1"
       },
       "python3-update-manager": {
         "version": "1:16.04.3"
@@ -4052,9 +3818,6 @@
       },
       "readline-common": {
         "version": "6.3-8ubuntu2"
-      },
-      "rename": {
-        "version": "0.20-4"
       },
       "resolvconf": {
         "version": "1.78ubuntu2"
@@ -4149,9 +3912,6 @@
       "ufw": {
         "version": "0.35-0ubuntu2"
       },
-      "unattended-upgrades": {
-        "version": "0.90"
-      },
       "ureadahead": {
         "version": "0.100.0-19"
       },
@@ -4203,9 +3963,6 @@
       "xml-core": {
         "version": "0.13+nmu2"
       },
-      "xz-utils": {
-        "version": "5.1.1alpha+20120614-2ubuntu2"
-      },
       "zlib1g:amd64": {
         "version": "1:1.2.8.dfsg-2ubuntu4"
       }
@@ -4214,13 +3971,13 @@
       "by_device": {
         "/dev/root": {
           "kb_size": "24505644",
-          "kb_used": "1107116",
-          "kb_available": "22136960",
-          "percent_used": "5%",
+          "kb_used": "848492",
+          "kb_available": "22395584",
+          "percent_used": "4%",
           "total_inodes": "1520000",
-          "inodes_used": "53028",
-          "inodes_available": "1466972",
-          "inodes_percent_used": "4%",
+          "inodes_used": "44064",
+          "inodes_available": "1475936",
+          "inodes_percent_used": "3%",
           "mounts": [
             "/"
           ]
@@ -4334,36 +4091,30 @@
             "nodev",
             "noexec",
             "relatime",
-            "debug"
+            "perf_event"
           ],
           "mounts": [
             "/sys/fs/cgroup/systemd",
+            "/sys/fs/cgroup/debug",
+            "/sys/fs/cgroup/pids",
+            "/sys/fs/cgroup/cpuset",
             "/sys/fs/cgroup/cpu,cpuacct",
             "/sys/fs/cgroup/net_cls,net_prio",
-            "/sys/fs/cgroup/pids",
             "/sys/fs/cgroup/memory",
-            "/sys/fs/cgroup/perf_event",
-            "/sys/fs/cgroup/freezer",
-            "/sys/fs/cgroup/cpuset",
             "/sys/fs/cgroup/devices",
+            "/sys/fs/cgroup/freezer",
             "/sys/fs/cgroup/blkio",
-            "/sys/fs/cgroup/debug"
+            "/sys/fs/cgroup/perf_event"
           ]
         },
-        "systemd-1": {
-          "fs_type": "autofs",
+        "debugfs": {
+          "fs_type": "debugfs",
           "mount_options": [
             "rw",
-            "relatime",
-            "fd=28",
-            "pgrp=1",
-            "timeout=0",
-            "minproto=5",
-            "maxproto=5",
-            "direct"
+            "relatime"
           ],
           "mounts": [
-            "/proc/sys/fs/binfmt_misc"
+            "/sys/kernel/debug"
           ]
         },
         "mqueue": {
@@ -4376,14 +4127,20 @@
             "/dev/mqueue"
           ]
         },
-        "debugfs": {
-          "fs_type": "debugfs",
+        "systemd-1": {
+          "fs_type": "autofs",
           "mount_options": [
             "rw",
-            "relatime"
+            "relatime",
+            "fd=33",
+            "pgrp=1",
+            "timeout=0",
+            "minproto=5",
+            "maxproto=5",
+            "direct"
           ],
           "mounts": [
-            "/sys/kernel/debug"
+            "/proc/sys/fs/binfmt_misc"
           ]
         },
         "fusectl": {
@@ -4408,7 +4165,7 @@
         },
         "/dev/sdb": {
           "fs_type": "swap",
-          "uuid": "b6ff4e56-e646-4001-a2c6-fb57421910d1",
+          "uuid": "5092eaad-3f60-4cd5-9b7a-4c748d3bf220",
           "mounts": [
 
           ]
@@ -4417,13 +4174,13 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "24505644",
-          "kb_used": "1107116",
-          "kb_available": "22136960",
-          "percent_used": "5%",
+          "kb_used": "848492",
+          "kb_available": "22395584",
+          "percent_used": "4%",
           "total_inodes": "1520000",
-          "inodes_used": "53028",
-          "inodes_available": "1466972",
-          "inodes_percent_used": "4%",
+          "inodes_used": "44064",
+          "inodes_available": "1475936",
+          "inodes_percent_used": "3%",
           "devices": [
             "/dev/root",
             "/dev/sda"
@@ -4479,12 +4236,12 @@
         },
         "/run": {
           "kb_size": "507592",
-          "kb_used": "7852",
-          "kb_available": "499740",
+          "kb_used": "7836",
+          "kb_available": "499756",
           "percent_used": "2%",
           "total_inodes": "126898",
-          "inodes_used": "1188",
-          "inodes_available": "125710",
+          "inodes_used": "1179",
+          "inodes_available": "125719",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -4619,6 +4376,48 @@
             "cgroup"
           ]
         },
+        "/sys/fs/cgroup/debug": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "debug"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
+        "/sys/fs/cgroup/pids": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "pids"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
+        "/sys/fs/cgroup/cpuset": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "cpuset"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
         "/sys/fs/cgroup/cpu,cpuacct": {
           "fs_type": "cgroup",
           "mount_options": [
@@ -4649,20 +4448,6 @@
             "cgroup"
           ]
         },
-        "/sys/fs/cgroup/pids": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "pids"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
         "/sys/fs/cgroup/memory": {
           "fs_type": "cgroup",
           "mount_options": [
@@ -4672,48 +4457,6 @@
             "noexec",
             "relatime",
             "memory"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/perf_event": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "perf_event"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/freezer": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "freezer"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/cpuset": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "cpuset"
           ],
           "devices": [
             "cgroup"
@@ -4733,6 +4476,20 @@
             "cgroup"
           ]
         },
+        "/sys/fs/cgroup/freezer": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "freezer"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
         "/sys/fs/cgroup/blkio": {
           "fs_type": "cgroup",
           "mount_options": [
@@ -4747,7 +4504,7 @@
             "cgroup"
           ]
         },
-        "/sys/fs/cgroup/debug": {
+        "/sys/fs/cgroup/perf_event": {
           "fs_type": "cgroup",
           "mount_options": [
             "rw",
@@ -4755,26 +4512,20 @@
             "nodev",
             "noexec",
             "relatime",
-            "debug"
+            "perf_event"
           ],
           "devices": [
             "cgroup"
           ]
         },
-        "/proc/sys/fs/binfmt_misc": {
-          "fs_type": "autofs",
+        "/sys/kernel/debug": {
+          "fs_type": "debugfs",
           "mount_options": [
             "rw",
-            "relatime",
-            "fd=28",
-            "pgrp=1",
-            "timeout=0",
-            "minproto=5",
-            "maxproto=5",
-            "direct"
+            "relatime"
           ],
           "devices": [
-            "systemd-1"
+            "debugfs"
           ]
         },
         "/dev/mqueue": {
@@ -4787,14 +4538,20 @@
             "mqueue"
           ]
         },
-        "/sys/kernel/debug": {
-          "fs_type": "debugfs",
+        "/proc/sys/fs/binfmt_misc": {
+          "fs_type": "autofs",
           "mount_options": [
             "rw",
-            "relatime"
+            "relatime",
+            "fd=33",
+            "pgrp=1",
+            "timeout=0",
+            "minproto=5",
+            "maxproto=5",
+            "direct"
           ],
           "devices": [
-            "debugfs"
+            "systemd-1"
           ]
         },
         "/sys/fs/fuse/connections": {
@@ -4822,14 +4579,14 @@
         "/dev/root,/": {
           "device": "/dev/root",
           "kb_size": "24505644",
-          "kb_used": "1107116",
-          "kb_available": "22136960",
-          "percent_used": "5%",
+          "kb_used": "848492",
+          "kb_available": "22395584",
+          "percent_used": "4%",
           "mount": "/",
           "total_inodes": "1520000",
-          "inodes_used": "53028",
-          "inodes_available": "1466972",
-          "inodes_percent_used": "4%"
+          "inodes_used": "44064",
+          "inodes_available": "1475936",
+          "inodes_percent_used": "3%"
         },
         "devtmpfs,/dev": {
           "device": "devtmpfs",
@@ -4872,13 +4629,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "507592",
-          "kb_used": "7852",
-          "kb_available": "499740",
+          "kb_used": "7836",
+          "kb_available": "499756",
           "percent_used": "2%",
           "mount": "/run",
           "total_inodes": "126898",
-          "inodes_used": "1188",
-          "inodes_available": "125710",
+          "inodes_used": "1179",
+          "inodes_available": "125719",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -5015,6 +4772,45 @@
             "name=systemd"
           ]
         },
+        "cgroup,/sys/fs/cgroup/debug": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/debug",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "debug"
+          ]
+        },
+        "cgroup,/sys/fs/cgroup/pids": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/pids",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "pids"
+          ]
+        },
+        "cgroup,/sys/fs/cgroup/cpuset": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/cpuset",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "cpuset"
+          ]
+        },
         "cgroup,/sys/fs/cgroup/cpu,cpuacct": {
           "device": "cgroup",
           "mount": "/sys/fs/cgroup/cpu,cpuacct",
@@ -5043,19 +4839,6 @@
             "net_prio"
           ]
         },
-        "cgroup,/sys/fs/cgroup/pids": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/pids",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "pids"
-          ]
-        },
         "cgroup,/sys/fs/cgroup/memory": {
           "device": "cgroup",
           "mount": "/sys/fs/cgroup/memory",
@@ -5067,45 +4850,6 @@
             "noexec",
             "relatime",
             "memory"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/perf_event": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/perf_event",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "perf_event"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/freezer": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/freezer",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "freezer"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/cpuset": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/cpuset",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "cpuset"
           ]
         },
         "cgroup,/sys/fs/cgroup/devices": {
@@ -5121,6 +4865,19 @@
             "devices"
           ]
         },
+        "cgroup,/sys/fs/cgroup/freezer": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/freezer",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "freezer"
+          ]
+        },
         "cgroup,/sys/fs/cgroup/blkio": {
           "device": "cgroup",
           "mount": "/sys/fs/cgroup/blkio",
@@ -5134,9 +4891,9 @@
             "blkio"
           ]
         },
-        "cgroup,/sys/fs/cgroup/debug": {
+        "cgroup,/sys/fs/cgroup/perf_event": {
           "device": "cgroup",
-          "mount": "/sys/fs/cgroup/debug",
+          "mount": "/sys/fs/cgroup/perf_event",
           "fs_type": "cgroup",
           "mount_options": [
             "rw",
@@ -5144,22 +4901,16 @@
             "nodev",
             "noexec",
             "relatime",
-            "debug"
+            "perf_event"
           ]
         },
-        "systemd-1,/proc/sys/fs/binfmt_misc": {
-          "device": "systemd-1",
-          "mount": "/proc/sys/fs/binfmt_misc",
-          "fs_type": "autofs",
+        "debugfs,/sys/kernel/debug": {
+          "device": "debugfs",
+          "mount": "/sys/kernel/debug",
+          "fs_type": "debugfs",
           "mount_options": [
             "rw",
-            "relatime",
-            "fd=28",
-            "pgrp=1",
-            "timeout=0",
-            "minproto=5",
-            "maxproto=5",
-            "direct"
+            "relatime"
           ]
         },
         "mqueue,/dev/mqueue": {
@@ -5171,13 +4922,19 @@
             "relatime"
           ]
         },
-        "debugfs,/sys/kernel/debug": {
-          "device": "debugfs",
-          "mount": "/sys/kernel/debug",
-          "fs_type": "debugfs",
+        "systemd-1,/proc/sys/fs/binfmt_misc": {
+          "device": "systemd-1",
+          "mount": "/proc/sys/fs/binfmt_misc",
+          "fs_type": "autofs",
           "mount_options": [
             "rw",
-            "relatime"
+            "relatime",
+            "fd=33",
+            "pgrp=1",
+            "timeout=0",
+            "minproto=5",
+            "maxproto=5",
+            "direct"
           ]
         },
         "fusectl,/sys/fs/fuse/connections": {
@@ -5201,7 +4958,7 @@
         "/dev/sdb,": {
           "device": "/dev/sdb",
           "fs_type": "swap",
-          "uuid": "b6ff4e56-e646-4001-a2c6-fb57421910d1"
+          "uuid": "5092eaad-3f60-4cd5-9b7a-4c748d3bf220"
         }
       }
     },
@@ -5212,8 +4969,8 @@
     },
     "sessions": {
       "by_session": {
-        "16": {
-          "session": "16",
+        "9": {
+          "session": "9",
           "uid": "0",
           "user": "root",
           "seat": null
@@ -5222,7 +4979,7 @@
       "by_user": {
         "root": [
           {
-            "session": "16",
+            "session": "9",
             "uid": "0",
             "user": "root",
             "seat": null
@@ -5490,27 +5247,22 @@
       "fail2ban::default",
       "monit-tlq::default",
       "monit_configs-tlq::system",
-      "postgresql::server",
-      "monit_configs-tlq::postgres",
-      "redis-server::default",
-      "monit_configs-tlq::redis-server",
       "nginx::repo",
       "nginx::default",
       "monit_configs-tlq::nginx",
+      "postgresql::server",
+      "monit_configs-tlq::postgres",
       "rails_gem_dependencies-tlq",
       "rails_gem_dependencies-tlq::default",
       "ruby_build",
       "ruby_build::default",
       "ruby_rbenv::system",
+      "redis-server::default",
+      "monit_configs-tlq::redis-server",
       "build-essential::_debian",
       "chef-sugar::default",
       "ntp::apparmor",
-      "postgresql::ca_certificates",
-      "postgresql::client",
-      "postgresql::apt_pgdg_postgresql",
       "apt::default",
-      "postgresql::server_debian",
-      "postgresql::server_conf",
       "nginx::package",
       "nginx::ohai_plugin",
       "ohai::default",
@@ -5518,6 +5270,11 @@
       "nginx::commons_dir",
       "nginx::commons_script",
       "nginx::commons_conf",
+      "postgresql::ca_certificates",
+      "postgresql::client",
+      "postgresql::apt_pgdg_postgresql",
+      "postgresql::server_debian",
+      "postgresql::server_conf",
       "ruby_rbenv::system_install",
       "ruby_rbenv::default"
     ],
@@ -5534,23 +5291,23 @@
       "fail2ban::default",
       "monit-tlq::default",
       "monit_configs-tlq::system",
-      "postgresql::server",
-      "monit_configs-tlq::postgres",
-      "redis-server::default",
-      "monit_configs-tlq::redis-server",
       "nginx::repo",
       "nginx::default",
       "monit_configs-tlq::nginx",
+      "postgresql::server",
+      "monit_configs-tlq::postgres",
       "rails_gem_dependencies-tlq::default",
       "ruby_build::default",
-      "ruby_rbenv::system"
+      "ruby_rbenv::system",
+      "redis-server::default",
+      "monit_configs-tlq::redis-server"
     ],
     "roles": [
       "server",
-      "postgres-server",
-      "redis-server",
       "nginx-server",
-      "rails-app"
+      "postgres-server",
+      "rails-app",
+      "redis-server"
     ],
     "cookbooks": {
       "openssl": {
@@ -5589,14 +5346,11 @@
       "monit_configs-tlq": {
         "version": "0.1.2"
       },
-      "postgresql": {
-        "version": "4.0.6"
-      },
-      "redis-server": {
-        "version": "0.1.1"
-      },
       "nginx": {
         "version": "2.7.6"
+      },
+      "postgresql": {
+        "version": "4.0.6"
       },
       "rails_gem_dependencies-tlq": {
         "version": "0.0.3"
@@ -5606,6 +5360,9 @@
       },
       "ruby_rbenv": {
         "version": "1.0.1"
+      },
+      "redis-server": {
+        "version": "0.1.1"
       },
       "chef-sugar": {
         "version": "3.3.0"
@@ -5698,9 +5455,9 @@
   },
   "run_list": [
     "role[server]",
-    "role[postgres-server]",
-    "role[redis-server]",
     "role[nginx-server]",
-    "role[rails-app]"
+    "role[postgres-server]",
+    "role[rails-app]",
+    "role[redis-server]"
   ]
 }

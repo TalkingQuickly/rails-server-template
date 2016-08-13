@@ -1,7 +1,6 @@
 DEPENDENCIES
   apt-chef (~> 1.0.0)
   build-essential
-  chef-solo-search (~> 0.5.1)
   fail2ban (~> 2.3.0)
   firewall (~> 2.5.2)
   hostnames (= 0.3.1)
@@ -15,7 +14,7 @@ DEPENDENCIES
     git: git://github.com/TalkingQuickly/monit_configs-tlq.git
     revision: c10ee522a69db1ec48672a2b1c8a42ae92e027e1
     branch: master
-  mysql (~> 7.1.1)
+  mysql (~> 5.6.3)
   nginx
     git: git://github.com/miketheman/nginx.git
     revision: e36944b0dac1f21044a4f0d01fc566023325cfde
@@ -47,7 +46,6 @@ GRAPH
     rsyslog (>= 2.0)
   build-essential (2.4.0)
     7-zip (>= 0.0.0)
-  chef-solo-search (0.5.1)
   chef-sugar (3.3.0)
   chef_handler (1.4.0)
   compat_resource (12.10.6)
@@ -68,8 +66,7 @@ GRAPH
     yum-epel (>= 0.0.0)
   monit-tlq (0.3.11)
   monit_configs-tlq (0.1.2)
-  mysql (7.1.1)
-    smf (>= 0.0.0)
+  mysql (5.6.3)
     yum-mysql-community (>= 0.0.0)
   nginx (2.7.6)
     apt (~> 2.2)
@@ -92,7 +89,6 @@ GRAPH
     openssl (~> 4.0)
   rails_gem_dependencies-tlq (0.0.3)
     apt (>= 0.0.0)
-  rbac (1.0.3)
   redis-server (0.1.1)
     apt (>= 0.0.0)
   rsyslog (4.0.0)
@@ -103,8 +99,6 @@ GRAPH
     ruby_build (>= 0.0.0)
   runit (1.7.8)
     packagecloud (>= 0.0.0)
-  smf (2.2.8)
-    rbac (>= 1.0.1)
   sudo (2.9.0)
   ufw (1.0.0)
     firewall (>= 2.0)

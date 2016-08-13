@@ -3,9 +3,6 @@ source "https://api.berkshelf.com"
 # cookbook 'apt', github: 'opscode-cookbooks/apt'
 cookbook 'apt-chef', '~> 1.0.0'
 
-# cookbook 'chef-solo-search', github: 'edelight/chef-solo-search'
-cookbook 'chef-solo-search', '~> 0.5.1'
-
 #cookbook 'build-essential', github: 'opscode-cookbooks/build-essential'
 cookbook 'build-essential'
 
@@ -21,7 +18,7 @@ cookbook 'locale', '~> 1.1.0'
 cookbook 'memcached', '~> 3.0.0'
 
 #cookbook 'mysql', github: 'opscode-cookbooks/mysql'
-cookbook 'mysql', '~> 7.1.1'
+cookbook 'mysql', '~> 5.6.3'
 
 #cookbook 'ntp', github: 'gmiranda23/ntp'
 cookbook 'ntp', '~> 2.0.0'
@@ -39,7 +36,8 @@ cookbook 'ufw', '~> 1.0.0'
 cookbook 'firewall', '~> 2.5.2'
 
 cookbook 'nginx', github: 'miketheman/nginx'
-cookbook 'users', github: 'opscode-cookbooks/users'
+
+cookbook 'users', '~> 2.0.3'
 
 cookbook 'rails_gem_dependencies-tlq', github: 'TalkingQuickly/rails_gem_dependencies-tlq'
 cookbook 'ruby_rbenv', github: 'fnichol/chef-rbenv'

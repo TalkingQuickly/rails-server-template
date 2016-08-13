@@ -21,6 +21,7 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
+      "role[server]",
       "recipe[mongodb::10gen_repo]",
       "recipe[mongodb]",
       "recipe[monit_configs-tlq::mongo]"

@@ -18,11 +18,17 @@
       },
       "contrib": {
         "packages": ["postgresql-contrib-9.5"]
+      },
+      "postgresql" : {
+        "password" : {
+          "postgres" : "thepasswordisben"
+        }
       }
     }
    },
    "json_class": "Chef::Role",
    "run_list": [
+      "role[server]",
       "postgresql::server",
       "monit_configs-tlq::postgres"
    ],

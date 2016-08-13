@@ -90,10 +90,6 @@ GEM
     iniparse (1.4.2)
     ipaddress (0.8.3)
     json (1.8.3)
-    knife-solo (0.6.0)
-      chef (>= 10.20)
-      erubis (~> 2.7.0)
-      net-ssh (>= 2.7, < 4.0)
     knife-zero (1.16.0)
       chef (~> 12.6)
     libyajl2 (1.2.0)
@@ -210,8 +206,7 @@ DEPENDENCIES
   berkshelf (~> 4.3.3)
   chef (~> 12.11.8)
   chef-zero (= 4.6.2)
-  knife-solo (= 0.6.0)
-  knife-zero
+  knife-zero (~> 1.7, >= 1.7.1)
 
 BUNDLED WITH
    1.10.6
