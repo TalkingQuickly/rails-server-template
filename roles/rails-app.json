@@ -4,11 +4,11 @@
   "default_attributes": {
     "rbenv":{
       "rubies": [
-        "2.1.2"
+        "2.3.1"
       ],
-      "global" : "2.1.2",
+      "global" : "2.3.1",
       "gems": {
-        "2.1.2" : [
+        "2.3.1" : [
           {"name":"bundler"}
         ]
       }
@@ -19,7 +19,7 @@
   "run_list": [
     "rails_gem_dependencies-tlq",
     "ruby_build",
-    "rbenv::system"
+    "ruby_rbenv::system"
   ],
   "chef_type": "role",
   "override_attributes": {

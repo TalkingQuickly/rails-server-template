@@ -13,6 +13,7 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
+      "role[server]",
       "recipe[nginx::repo]",
       "recipe[nginx::default]",
       "recipe[monit_configs-tlq::nginx]",

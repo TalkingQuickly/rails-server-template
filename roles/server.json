@@ -1,7 +1,3 @@
-// Things we want standard on all server boxes, primarily:
-// - Security
-// - Look and feel
-// - default users, groups etc
 {
   "name": "server",
   "description": "A server of some kind...",
@@ -18,29 +14,13 @@
     },
     "authorization": {
       "sudo": {
-        // everyone in the group sysadmin gets sudo rights
         "groups": ["sysadmin"],
-        // the deploy user specifically gets sudo rights
         "users": ["deploy"],
-        // whether a user with sudo rights can execute sudo
-        // commands without entering their password.
         "passwordless": true
       }
     },
-    "locales" : {
-      "packages" : ["locales"],
-      "default" : "en_US.utf8"
-    },
-    "look_and_feel-tlq" : {
-      // any extra locales we want available. Useful if your
-      // local dev machine uses a locale which doesn't match
-      // the servers locale.
-      "additional_locales" : ["en_GB.utf8"]
-    },
     "monit": {
-      // which lucky person gets monit emails if enabled
       "notify_emails" : ["user@example.com"],
-      // enable or disable monit emails
       "enable_emails" : false,
       "mailserver" : {
         "host" : "your-server",
@@ -71,32 +51,18 @@
   },
   "json_class": "Chef::Role",
   "run_list": [
-    // required for generating secure passwords
+    "recipe[apt::default]",
     "recipe[openssl::default]",
-    // required for building from source
     "recipe[build-essential::default]",
-    // required by the users cookbook when using chef solo
-    "recipe[chef-solo-search::default]",
-    // setup standard sysadmin users
     "recipe[users::sysadmins]",
-    // install and enable ufw
+    "recipe[firewall::default]",
     "recipe[ufw::default]",
-    // enable unattended upgrades
     "recipe[apt::unattended-upgrades]",
-    // enable automatic time sync
     "recipe[ntp::default]",
-    // make sure deploy user has sudo rights
     "recipe[sudo::default]",
-    // Make sure we have a valid locale setup
-    "recipe[locales::default]",
-    // Block repeated failed login attempts
+    "recipe[locale::default]",
     "recipe[fail2ban::default]",
-    // Visual tweaks and tools
-    "recipe[look_and_feel-tlq::default]",
-    // get monit up and running (config is down to
-    // individual apps/ a separate recipe)
     "recipe[monit-tlq::default]",
-    // monit configurations for a standard ubuntu system
     "recipe[monit_configs-tlq::system]"
   ],
   "chef_type": "role",
