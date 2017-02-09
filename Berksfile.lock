@@ -15,9 +15,7 @@ DEPENDENCIES
     revision: c10ee522a69db1ec48672a2b1c8a42ae92e027e1
     branch: master
   mysql (~> 5.6.3)
-  nginx
-    git: git://github.com/miketheman/nginx.git
-    revision: e36944b0dac1f21044a4f0d01fc566023325cfde
+  nginx (~> 2.7.6)
   ntp (~> 2.0.0)
   openssh (= 1.2.2)
   postgresql (~> 4.0.6)

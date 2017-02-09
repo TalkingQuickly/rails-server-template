@@ -35,7 +35,7 @@ cookbook 'sudo', '~> 2.9.0'
 cookbook 'ufw', '~> 1.0.0'
 cookbook 'firewall', '~> 2.5.2'
 
-cookbook 'nginx', github: 'miketheman/nginx'
+cookbook 'nginx', '~> 2.7.6'
 
 cookbook 'users', '~> 2.0.3'
 
