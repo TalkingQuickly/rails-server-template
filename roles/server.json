@@ -52,8 +52,6 @@
   "json_class": "Chef::Role",
   "run_list": [
     "recipe[apt::default]",
-    "recipe[openssl::default]",
-    "recipe[build-essential::default]",
     "recipe[users::sysadmins]",
     "recipe[firewall::default]",
     "recipe[ufw::default]",

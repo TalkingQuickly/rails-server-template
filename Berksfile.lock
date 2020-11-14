@@ -1,6 +1,5 @@
 DEPENDENCIES
   apt-chef (~> 1.0.0)
-  build-essential
   fail2ban (~> 2.3.0)
   firewall (~> 2.5.2)
   hostnames (= 0.3.1)
@@ -15,50 +14,41 @@ DEPENDENCIES
     revision: c10ee522a69db1ec48672a2b1c8a42ae92e027e1
     branch: master
   mysql (~> 5.6.3)
-  nginx
-    git: git://github.com/miketheman/nginx.git
-    revision: e36944b0dac1f21044a4f0d01fc566023325cfde
-  ntp (~> 2.0.0)
+  nginx (~> 10.6.0)
+  ntp (~> 3.7.0)
   openssh (= 1.2.2)
-  postgresql (~> 4.0.6)
+  postgresql (~> 8.0.1)
   rails_gem_dependencies-tlq
     git: git://github.com/TalkingQuickly/rails_gem_dependencies-tlq.git
     revision: f62ff22492dd9a2c31cd856de176c19f0fbe2d73
   redis-server
     git: git://github.com/TalkingQuickly/redis-server.git
     revision: a8cf2367505d543a0601db572b90ff30d693f202
+  ruby_build (~> 2.1.1)
   ruby_rbenv
-    git: git://github.com/fnichol/chef-rbenv.git
-    revision: ea66c6f18be9cb54bae70b1280408bb09e47dc53
+    git: https://github.com/sous-chefs/ruby_rbenv.git
+    revision: 35c775e5e0371cb798f5049a56dc8330bd196f15
   sudo (~> 2.9.0)
-  ufw (~> 1.0.0)
+  ufw (~> 3.2.1)
   users
     git: git://github.com/opscode-cookbooks/users.git
     revision: 80ca9d184f02557474a1e5fd5c821e834c50e2a0
 
 GRAPH
-  7-zip (1.0.2)
-    windows (>= 1.2.2)
   apt (2.9.2)
   apt-chef (1.0.0)
     apt (>= 0.0.0)
-  bluepill (2.4.3)
-    rsyslog (>= 2.0)
-  build-essential (2.4.0)
-    7-zip (>= 0.0.0)
   chef-sugar (3.3.0)
-  chef_handler (1.4.0)
   compat_resource (12.10.6)
   fail2ban (2.3.0)
     yum-epel (>= 0.0.0)
   firewall (2.5.2)
     chef-sugar (>= 0.0.0)
+  homebrew (5.1.0)
   hostnames (0.3.1)
     hostsfile (>= 0.0.0)
   hostsfile (2.4.5)
   iptables (2.2.0)
-  java (1.39.0)
-    apt (>= 0.0.0)
   locale (1.1.0)
   memcached (3.0.0)
     compat_resource (>= 12.9.0)
@@ -68,44 +58,33 @@ GRAPH
   monit_configs-tlq (0.1.2)
   mysql (5.6.3)
     yum-mysql-community (>= 0.0.0)
-  nginx (2.7.6)
-    apt (~> 2.2)
-    bluepill (~> 2.3)
-    build-essential (~> 2.0)
-    ohai (~> 2.0)
-    runit (~> 1.2)
-    yum-epel (~> 0.3)
-  ntp (2.0.0)
-    windows (>= 1.38.0)
-  ohai (2.1.0)
+  nginx (10.6.0)
+    ohai (~> 5.2)
+  ntp (3.7.0)
+  ohai (5.3.0)
   openssh (1.2.2)
     iptables (>= 0.0.0)
-  openssl (4.4.0)
-    chef-sugar (>= 3.1.1)
   packagecloud (0.2.3)
-  postgresql (4.0.6)
-    apt (>= 1.9.0)
-    build-essential (>= 0.0.0)
-    openssl (~> 4.0)
+  postgresql (8.0.1)
+    apt (>= 0.0.0)
+    yum-epel (>= 0.0.0)
   rails_gem_dependencies-tlq (0.0.3)
     apt (>= 0.0.0)
   redis-server (0.1.1)
     apt (>= 0.0.0)
-  rsyslog (4.0.0)
-    compat_resource (>= 0.0.0)
-  ruby_build (0.8.0)
-  ruby_rbenv (1.0.1)
-    java (> 1.4.0)
-    ruby_build (>= 0.0.0)
+  ruby_build (2.1.1)
+    homebrew (>= 0.0.0)
+    yum-centos (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  ruby_rbenv (2.6.0)
   runit (1.7.8)
     packagecloud (>= 0.0.0)
   sudo (2.9.0)
-  ufw (1.0.0)
+  ufw (3.2.1)
     firewall (>= 2.0)
   users (2.0.3)
-  windows (1.43.0)
-    chef_handler (>= 0.0.0)
   yum (3.11.0)
+  yum-centos (4.0.2)
   yum-epel (0.7.0)
     yum (>= 3.6.3)
   yum-mysql-community (0.2.0)
