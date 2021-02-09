@@ -2,6 +2,9 @@
   "name": "server",
   "description": "A server of some kind...",
   "default_attributes": {
+    "firewall" : {
+      "allow_ssh" : true
+    },
     "apt" : {
       "unattended_upgrades" : {
         "enable" : true,
@@ -52,7 +55,7 @@
   "json_class": "Chef::Role",
   "run_list": [
     "recipe[apt::default]",
-    "recipe[users::sysadmins]",
+    "recipe[users_wrapper::default]",
     "recipe[firewall::default]",
     "recipe[ufw::default]",
     "recipe[apt::unattended-upgrades]",

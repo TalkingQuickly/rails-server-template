@@ -27,19 +27,19 @@ cookbook 'postgresql', '~> 8.0.1'
 # cookbook 'sudo', github: 'opscode-cookbooks/sudo'
 cookbook 'sudo', '~> 2.9.0'
 
-# cookbook 'ufw', github: 'opscode-cookbooks/ufw'
 cookbook 'ufw', '~> 3.2.1'
-#cookbook 'firewall', '~> 2.7.0'
-cookbook 'firewall', '~> 2.5.2'
+cookbook 'firewall', '~> 2.7.0'
 
 cookbook 'nginx', '~> 10.6.0'
 
-cookbook 'users', '~> 2.0.3'
+cookbook 'users', '~> 5.5.0'
 
 cookbook 'ruby_build', '~> 2.1.1'
 cookbook 'ruby_rbenv', github: 'sous-chefs/ruby_rbenv'
 
-cookbook 'rails_gem_dependencies-tlq', github: 'TalkingQuickly/rails_gem_dependencies-tlq'
+# cookbook 'rails_gem_dependencies-tlq', github: 'TalkingQuickly/rails_gem_dependencies-tlq'
+cookbook 'rails_gem_dependencies-tlq', path: '../rails_gem_dependencies-tlq'
 cookbook 'redis-server', github: 'TalkingQuickly/redis-server'
-cookbook 'monit-tlq', github: 'TalkingQuickly/monit-tlq', branch: 'master'
+# cookbook 'monit-tlq', github: 'TalkingQuickly/monit-tlq', branch: 'master'
+cookbook 'monit-tlq', path: '../monit-tlq'
 cookbook 'monit_configs-tlq', github: 'TalkingQuickly/monit_configs-tlq', branch: 'master'

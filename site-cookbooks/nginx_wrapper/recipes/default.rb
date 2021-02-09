@@ -5,4 +5,5 @@
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
 nginx_install 'default' do
+  source 'repo'
 end
