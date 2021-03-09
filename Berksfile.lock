@@ -12,10 +12,10 @@ DEPENDENCIES
     revision: c10ee522a69db1ec48672a2b1c8a42ae92e027e1
     branch: master
   mysql (~> 5.6.3)
-  nginx (~> 10.6.0)
+  nginx (~> 11.4.0)
   ntp (~> 3.7.0)
   openssh (= 1.2.2)
-  postgresql (~> 8.0.1)
+  postgresql (~> 8.2.1)
   rails_gem_dependencies-tlq
     path: ../rails_gem_dependencies-tlq
   redis-server
@@ -53,14 +53,14 @@ GRAPH
   monit_configs-tlq (0.1.2)
   mysql (5.6.3)
     yum-mysql-community (>= 0.0.0)
-  nginx (10.6.0)
+  nginx (11.4.0)
     ohai (~> 5.2)
   ntp (3.7.0)
   ohai (5.3.0)
   openssh (1.2.2)
     iptables (>= 0.0.0)
   packagecloud (0.2.3)
-  postgresql (8.0.1)
+  postgresql (8.2.1)
     apt (>= 0.0.0)
     yum-epel (>= 0.0.0)
   rails_gem_dependencies-tlq (1.0.0)

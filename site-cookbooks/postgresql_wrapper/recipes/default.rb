@@ -6,14 +6,22 @@
 
 postgresql_client_install 'PostgreSQL Client' do
   setup_repo true
-  version '13'
+  version node['postgresql']['version']
 end
 
-postgresql_server_install 'PostgreSQL Server' do
-  version '13'
+postgresql_server_install 'Install PostgreSQL Server' do
+  action :install
+  version node['postgresql']['version']
   setup_repo true
+end
+
+postgresql_server_install 'Setup PostgreSQL Server' do
+  action :create
+  version node['postgresql']['version']
   password node['postgresql']['password']['postgres']
 end
+
+package 'libpq-dev'
 
 find_resource(:service, 'postgresql') do
   extend PostgresqlCookbook::Helpers

@@ -3,10 +3,11 @@
    "description": "Postgres database server",
    "default_attributes": {
     "postgresql" : {
-      "postgresql" : {
-        "password" : {
-          "postgres" : "thepasswordisben"
-        }
+      "version" : "13"
+    },
+    "monit_configs-tlq" : {
+      "postgres" : {
+        "pidfile" : "/var/run/postgresql/13-main.pid"
       }
     }
    },

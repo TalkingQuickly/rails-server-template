@@ -22,7 +22,7 @@ cookbook 'ntp', '~> 3.7.0'
 #cookbook 'openssh', github: 'opscode-cookbooks/openssh'
 cookbook 'openssh', '= 1.2.2'
 
-cookbook 'postgresql', '~> 8.0.1'
+cookbook 'postgresql', '~> 8.2.1'
 
 # cookbook 'sudo', github: 'opscode-cookbooks/sudo'
 cookbook 'sudo', '~> 2.9.0'
@@ -30,7 +30,7 @@ cookbook 'sudo', '~> 2.9.0'
 cookbook 'ufw', '~> 3.2.1'
 cookbook 'firewall', '~> 2.7.0'
 
-cookbook 'nginx', '~> 10.6.0'
+cookbook 'nginx', '~> 11.4.0'
 
 cookbook 'users', '~> 5.5.0'
 
