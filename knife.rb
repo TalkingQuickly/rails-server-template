@@ -5,5 +5,5 @@ cookbook_path ["cookbooks", "berks-cookbooks", "site-cookbooks"]
 knife[:ssh_attribute] = "knife_zero.host"
 knife[:use_sudo] = true
 knife[:editor] = 'vim'
-knife[:before_bootstrap] = "berks vendor"
-knife[:before_converge]  = "berks vendor"
+knife[:before_bootstrap] = "rm -rf ./berks-cookboks/* && berks vendor"
+knife[:before_converge]  = "rm -rf ./berks-cookboks/* && berks vendor"

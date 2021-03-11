@@ -1,6 +1,6 @@
 {
   "name": "nginx-server",
-  "description": "Nginx server",
+  "description": "An Nginx server",
   "default_attributes": {
     "firewall" : {
       "rules" : [

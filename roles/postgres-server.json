@@ -1,6 +1,6 @@
 {
    "name": "postgres-server",
-   "description": "Postgres database server",
+   "description": "A Postgres database server",
    "default_attributes": {
     "postgresql" : {
       "version" : "13"

@@ -4,13 +4,11 @@ DEPENDENCIES
   firewall (~> 2.7.0)
   hostnames (= 0.3.1)
   locale (~> 1.1.0)
-  memcached (~> 3.0.0)
+  memcached (~> 6.1.0)
   monit-tlq
     path: ../monit-tlq
   monit_configs-tlq
-    git: git://github.com/TalkingQuickly/monit_configs-tlq.git
-    revision: c10ee522a69db1ec48672a2b1c8a42ae92e027e1
-    branch: master
+    path: ../monit_configs-tlq
   mysql (~> 5.6.3)
   nginx (~> 11.4.0)
   ntp (~> 3.7.0)
@@ -18,9 +16,7 @@ DEPENDENCIES
   postgresql (~> 8.2.1)
   rails_gem_dependencies-tlq
     path: ../rails_gem_dependencies-tlq
-  redis-server
-    git: git://github.com/TalkingQuickly/redis-server.git
-    revision: a8cf2367505d543a0601db572b90ff30d693f202
+  redisio (~> 4.2.0)
   ruby_build (~> 2.1.1)
   ruby_rbenv
     git: https://github.com/sous-chefs/ruby_rbenv.git
@@ -34,7 +30,6 @@ GRAPH
   apt-chef (1.0.0)
     apt (>= 0.0.0)
   chef-sugar (5.1.12)
-  compat_resource (12.10.6)
   fail2ban (2.3.0)
     yum-epel (>= 0.0.0)
   firewall (2.7.0)
@@ -45,12 +40,9 @@ GRAPH
   hostsfile (2.4.5)
   iptables (2.2.0)
   locale (1.1.0)
-  memcached (3.0.0)
-    compat_resource (>= 12.9.0)
-    runit (>= 1.2.0)
-    yum-epel (>= 0.0.0)
-  monit-tlq (0.4.0)
-  monit_configs-tlq (0.1.2)
+  memcached (6.1.0)
+  monit-tlq (0.5.0)
+  monit_configs-tlq (1.0.0)
   mysql (5.6.3)
     yum-mysql-community (>= 0.0.0)
   nginx (11.4.0)
@@ -59,24 +51,24 @@ GRAPH
   ohai (5.3.0)
   openssh (1.2.2)
     iptables (>= 0.0.0)
-  packagecloud (0.2.3)
   postgresql (8.2.1)
     apt (>= 0.0.0)
     yum-epel (>= 0.0.0)
   rails_gem_dependencies-tlq (1.0.0)
     apt (>= 0.0.0)
-  redis-server (0.1.1)
-    apt (>= 0.0.0)
+  redisio (4.2.0)
+    selinux_policy (>= 2.2.0)
+    ulimit (>= 0.1.2)
   ruby_build (2.1.1)
     homebrew (>= 0.0.0)
     yum-centos (>= 0.0.0)
     yum-epel (>= 0.0.0)
   ruby_rbenv (2.6.0)
-  runit (1.7.8)
-    packagecloud (>= 0.0.0)
+  selinux_policy (2.4.3)
   sudo (2.9.0)
   ufw (3.2.1)
     firewall (>= 2.0)
+  ulimit (1.1.1)
   users (5.5.0)
   yum (3.11.0)
   yum-centos (4.0.2)

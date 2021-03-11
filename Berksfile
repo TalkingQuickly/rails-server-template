@@ -11,8 +11,7 @@ cookbook 'hostnames', '= 0.3.1'
 
 cookbook 'locale', '~> 1.1.0'
 
-#cookbook 'memcached', github: 'opscode-cookbooks/memcached'
-cookbook 'memcached', '~> 3.0.0'
+cookbook 'memcached', '~> 6.1.0'
 
 #cookbook 'mysql', github: 'opscode-cookbooks/mysql'
 cookbook 'mysql', '~> 5.6.3'
@@ -39,7 +38,8 @@ cookbook 'ruby_rbenv', github: 'sous-chefs/ruby_rbenv'
 
 # cookbook 'rails_gem_dependencies-tlq', github: 'TalkingQuickly/rails_gem_dependencies-tlq'
 cookbook 'rails_gem_dependencies-tlq', path: '../rails_gem_dependencies-tlq'
-cookbook 'redis-server', github: 'TalkingQuickly/redis-server'
+cookbook 'redisio', '~> 4.2.0'
 # cookbook 'monit-tlq', github: 'TalkingQuickly/monit-tlq', branch: 'master'
 cookbook 'monit-tlq', path: '../monit-tlq'
-cookbook 'monit_configs-tlq', github: 'TalkingQuickly/monit_configs-tlq', branch: 'master'
+# cookbook 'monit_configs-tlq', github: 'TalkingQuickly/monit_configs-tlq', branch: 'master'
+cookbook 'monit_configs-tlq', path: '../monit_configs-tlq'

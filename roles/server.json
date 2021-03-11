@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "description": "A server of some kind...",
+  "description": "The basics to be applied to a server of any kind",
   "default_attributes": {
     "firewall" : {
       "allow_ssh" : true
@@ -33,10 +33,6 @@
         "hostname" : "yourhostname"
       },
       "web_interface" : {
-        // access credentials for the web interface. Just
-        // enabling this won't set up the web interface,
-        // it will need either a vhost in nginx or its port
-        // being allowed through ufw
         "allow" : ["yourusername","yourpassword"]
       }
     },
