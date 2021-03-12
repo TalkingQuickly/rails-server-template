@@ -21,3 +21,11 @@ nginx_config 'nginx' do
   default_site_enabled true
   notifies :reload, 'nginx_service[nginx]', :delayed
 end
+
+directory '/etc/nginx/sites-available/' do
+  action :create
+end
+
+directory '/etc/nginx/sites-enabled/' do
+  action :create
+end
