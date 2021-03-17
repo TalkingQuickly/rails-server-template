@@ -2,14 +2,9 @@
    "name": "postgres-server",
    "description": "A Postgres database server",
    "default_attributes": {
-    "postgresql" : {
-      "version" : "13"
-    },
-    "monit_configs-tlq" : {
-      "postgres" : {
-        "pidfile" : "/var/run/postgresql/13-main.pid"
+      "postgresql" : {
+        "version" : "13"
       }
-    }
    },
    "json_class": "Chef::Role",
    "run_list": [

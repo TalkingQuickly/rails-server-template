@@ -28,8 +28,10 @@ find_resource(:service, 'postgresql') do
   service_name(lazy { platform_service_name })
   supports restart: true, status: true, reload: true
   action [:enable, :start]
+  version node['postgresql']['version']
 end
 
 postgresql_server_conf 'PostgreSQL Config' do
+  version node['postgresql']['version']
   notifies :reload, 'service[postgresql]'
 end
