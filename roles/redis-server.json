@@ -1,6 +1,6 @@
 {
    "name": "redis-server",
-   "description": "Redis server",
+   "description": "A Redis server",
    "default_attributes": {
       "redis-server": {
        }
@@ -8,8 +8,8 @@
    "json_class": "Chef::Role",
    "run_list": [
       "role[server]",
-      "recipe[redis-server::default]",
-      "monit_configs-tlq::redis-server"
+      "recipe[rdr_redisio_wrapper::default]",
+      "recipe[monit_configs-tlq::redis-server]"
    ],
    "chef_type": "role"
 }

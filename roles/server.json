@@ -1,7 +1,10 @@
 {
   "name": "server",
-  "description": "A server of some kind...",
+  "description": "The basics to be applied to a server of any kind",
   "default_attributes": {
+    "firewall" : {
+      "allow_ssh" : true
+    },
     "apt" : {
       "unattended_upgrades" : {
         "enable" : true,
@@ -30,10 +33,6 @@
         "hostname" : "yourhostname"
       },
       "web_interface" : {
-        // access credentials for the web interface. Just
-        // enabling this won't set up the web interface,
-        // it will need either a vhost in nginx or its port
-        // being allowed through ufw
         "allow" : ["yourusername","yourpassword"]
       }
     },
@@ -52,9 +51,7 @@
   "json_class": "Chef::Role",
   "run_list": [
     "recipe[apt::default]",
-    "recipe[openssl::default]",
-    "recipe[build-essential::default]",
-    "recipe[users::sysadmins]",
+    "recipe[rdr_users_wrapper::default]",
     "recipe[firewall::default]",
     "recipe[ufw::default]",
     "recipe[apt::unattended-upgrades]",

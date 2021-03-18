@@ -4,3 +4,6 @@ cookbooks/**/*
 .ruby-gemset
 .vagrant
 berks-cookbooks/
+nodes/test*
+clients/*.json
+.chef

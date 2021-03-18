@@ -1,3 +1,16 @@
+## 5.0.0 (March 2021)
+
+* Updates to support latest Chef Workstation instead of legacy ChefDK
+* Updates for Ubuntu 20.04 (LTS) Compatibility
+* Migrates nginx, postgresql, memcached, redis and rbenv to use wrapper cookbooks around the primary open source cookbooks 
+* Upgrades default Ruby version to 3.0.0
+* Upgrades default Postgres version to 13
+
+## 4.0.0
+
+* Updates for Ubuntu 16.04 Compatibility
+* Moves from Chef Solo to Chef Zero
+
 ## 3.0.0
 
 * Replaces <https://github.com/TalkingQuickly/mongo-tlq> MongoDB cookbook with community cookbook <https://github.com/edelight/chef-mongodb>

@@ -1,36 +1,16 @@
-// See https://github.com/hw-cookbooks/postgresql/issues/323
-// for why packages are specified here. Currently required to
-// get the latest Postgres version
 {
    "name": "postgres-server",
-   "description": "Postgres database server",
+   "description": "A Postgres database server",
    "default_attributes": {
-    "postgresql" : {
-      "version" : "9.5",
-      "enable_pgdg_apt" : true,
-      "use_pgdg_packages" : true,
-      "dir" : "/etc/postgresql/9.5/main",
-      "client": {
-        "packages": ["postgresql-client-9.5","libpq-dev"]
-      },
-      "server": {
-        "packages": ["postgresql-9.5"]
-      },
-      "contrib": {
-        "packages": ["postgresql-contrib-9.5"]
-      },
       "postgresql" : {
-        "password" : {
-          "postgres" : "thepasswordisben"
-        }
+        "version" : "13"
       }
-    }
    },
    "json_class": "Chef::Role",
    "run_list": [
       "role[server]",
-      "postgresql::server",
-      "monit_configs-tlq::postgres"
+      "recipe[rdr_postgresql_wrapper::default]",
+      "recipe[monit_configs-tlq::postgres]"
    ],
    "chef_type": "role"
 }

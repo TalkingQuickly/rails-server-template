@@ -1,14 +1,14 @@
 {
   "name": "rails-app",
-  "description": "Something which runs rails apps.",
+  "description": "A server which will be running Ruby on Rails applications",
   "default_attributes": {
     "rbenv":{
       "rubies": [
-        "2.3.1"
+        "3.0.0"
       ],
-      "global" : "2.3.1",
+      "global" : "3.0.0",
       "gems": {
-        "2.3.1" : [
+        "3.0.0" : [
           {"name":"bundler"}
         ]
       }
@@ -17,9 +17,8 @@
   },
   "json_class": "Chef::Role",
   "run_list": [
-    "rails_gem_dependencies-tlq",
-    "ruby_build",
-    "ruby_rbenv::system"
+    "recipe[rails_gem_dependencies-tlq::default]",
+    "recipe[rdr_ruby_rbenv_wrapper::default]"
   ],
   "chef_type": "role",
   "override_attributes": {
