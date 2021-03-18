@@ -16,7 +16,7 @@ end
 
 nginx_config 'nginx' do
   action :create
-  conf_cookbook 'nginx_wrapper'
+  conf_cookbook 'rdr_nginx_wrapper'
   conf_template 'nginx.conf.erb'
   default_site_enabled true
   notifies :reload, 'nginx_service[nginx]', :delayed

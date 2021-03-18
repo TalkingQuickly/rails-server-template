@@ -51,7 +51,7 @@
   "json_class": "Chef::Role",
   "run_list": [
     "recipe[apt::default]",
-    "recipe[users_wrapper::default]",
+    "recipe[rdr_users_wrapper::default]",
     "recipe[firewall::default]",
     "recipe[ufw::default]",
     "recipe[apt::unattended-upgrades]",

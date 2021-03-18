@@ -9,8 +9,8 @@
    "json_class": "Chef::Role",
    "run_list": [
       "role[server]",
-      "postgresql_wrapper::default",
-      "monit_configs-tlq::postgres"
+      "recipe[rdr_postgresql_wrapper::default]",
+      "recipe[monit_configs-tlq::postgres]"
    ],
    "chef_type": "role"
 }

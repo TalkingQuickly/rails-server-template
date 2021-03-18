@@ -14,7 +14,7 @@
   "json_class": "Chef::Role",
   "run_list": [
     "role[server]",
-    "recipe[nginx_wrapper::default]",
+    "recipe[rdr_nginx_wrapper::default]",
     "recipe[monit_configs-tlq::nginx]",
     "recipe[ufw::default]"
   ],

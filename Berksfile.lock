@@ -6,16 +6,22 @@ DEPENDENCIES
   locale (~> 1.1.0)
   memcached (~> 6.1.0)
   monit-tlq
-    path: ../monit-tlq
+    git: https://github.com/TalkingQuickly/monit-tlq.git
+    revision: 0716844d44766f302d9185b0e76fb4e2e162ce85
+    tag: 0.5.0
   monit_configs-tlq
-    path: ../monit_configs-tlq
+    git: https://github.com/TalkingQuickly/monit_configs-tlq.git
+    revision: 2bf25564c623514d2d56c8518f6334d14914073a
+    tag: 1.0.0
   mysql (~> 5.6.3)
   nginx (~> 11.4.0)
   ntp (~> 3.7.0)
   openssh (= 1.2.2)
   postgresql (~> 8.2.1)
   rails_gem_dependencies-tlq
-    path: ../rails_gem_dependencies-tlq
+    git: https://github.com/TalkingQuickly/rails_gem_dependencies-tlq.git
+    revision: 9592bdf890810ded3752879c6ac1e6111e669304
+    tag: 1.0.0
   redisio (~> 4.2.0)
   ruby_build (~> 2.1.1)
   ruby_rbenv

@@ -18,7 +18,7 @@
   "json_class": "Chef::Role",
   "run_list": [
     "recipe[rails_gem_dependencies-tlq::default]",
-    "recipe[ruby_rbenv_wrapper::default]"
+    "recipe[rdr_ruby_rbenv_wrapper::default]"
   ],
   "chef_type": "role",
   "override_attributes": {

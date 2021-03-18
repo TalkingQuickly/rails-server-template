@@ -4,13 +4,13 @@
 # https://docs.chef.io/policyfile/
 
 # A name that describes what the system you're building with Chef does.
-name 'postgresql_wrapper'
+name 'rdr_users_wrapper'
 
 # Where to find external cookbooks:
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'postgresql_wrapper::default'
+run_list 'rdr_users_wrapper::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'postgresql_wrapper', path: '.'
+cookbook 'rdr_users_wrapper', path: '.'
