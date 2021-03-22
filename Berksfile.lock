@@ -1,7 +1,6 @@
 DEPENDENCIES
-  apt-chef (~> 1.0.0)
-  fail2ban (~> 2.3.0)
-  firewall (~> 2.7.0)
+  apt (~> 7.4.0)
+  fail2ban (~> 6.3.2)
   hostnames (= 0.3.1)
   locale (~> 1.1.0)
   memcached (~> 6.1.0)
@@ -16,7 +15,7 @@ DEPENDENCIES
   mysql (~> 5.6.3)
   nginx (~> 11.4.0)
   ntp (~> 3.7.0)
-  openssh (= 1.2.2)
+  openssh (~> 2.9.0)
   postgresql (~> 8.2.1)
   rails_gem_dependencies-tlq
     git: https://github.com/TalkingQuickly/rails_gem_dependencies-tlq.git
@@ -27,16 +26,14 @@ DEPENDENCIES
   ruby_rbenv
     git: https://github.com/sous-chefs/ruby_rbenv.git
     revision: 35c775e5e0371cb798f5049a56dc8330bd196f15
-  sudo (~> 2.9.0)
+  sudo (~> 5.4.6)
   ufw (~> 3.2.1)
   users (~> 5.5.0)
 
 GRAPH
-  apt (2.9.2)
-  apt-chef (1.0.0)
-    apt (>= 0.0.0)
+  apt (7.4.0)
   chef-sugar (5.1.12)
-  fail2ban (2.3.0)
+  fail2ban (6.3.2)
     yum-epel (>= 0.0.0)
   firewall (2.7.0)
     chef-sugar (>= 0.0.0)
@@ -44,7 +41,7 @@ GRAPH
   hostnames (0.3.1)
     hostsfile (>= 0.0.0)
   hostsfile (2.4.5)
-  iptables (2.2.0)
+  iptables (7.1.0)
   locale (1.1.0)
   memcached (6.1.0)
   monit-tlq (0.5.0)
@@ -55,8 +52,8 @@ GRAPH
     ohai (~> 5.2)
   ntp (3.7.0)
   ohai (5.3.0)
-  openssh (1.2.2)
-    iptables (>= 0.0.0)
+  openssh (2.9.0)
+    iptables (>= 7.0)
   postgresql (8.2.1)
     apt (>= 0.0.0)
     yum-epel (>= 0.0.0)
@@ -71,7 +68,7 @@ GRAPH
     yum-epel (>= 0.0.0)
   ruby_rbenv (2.6.0)
   selinux_policy (2.4.3)
-  sudo (2.9.0)
+  sudo (5.4.6)
   ufw (3.2.1)
     firewall (>= 2.0)
   ulimit (1.1.1)

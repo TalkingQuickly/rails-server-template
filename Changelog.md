@@ -1,3 +1,9 @@
+## 5.0.1 (22nd March 2021)
+* Upgrades sudo, ufw, apt and fail2ban cookbooks to latest versions
+* Fixes issue where sshd configuration wasn't in the default server role run list
+* Adds a wrapper cookbook for the current community sudo cookbook
+* 
+
 ## 5.0.0 (March 2021)
 
 * Updates to support latest Chef Workstation instead of legacy ChefDK

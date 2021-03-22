@@ -12,7 +12,8 @@
           "${distro_id} stable",
           "${distro_id} ${distro_codename}-security"
         ],
-        "automatic_reboot" : true
+        "automatic_reboot" : true,
+        "auto_fix_interrupted_dpkg" : true
       }
     },
     "authorization": {
@@ -51,14 +52,14 @@
   "json_class": "Chef::Role",
   "run_list": [
     "recipe[apt::default]",
-    "recipe[rdr_users_wrapper::default]",
-    "recipe[firewall::default]",
     "recipe[ufw::default]",
+    "recipe[openssh::default]",
+    "recipe[fail2ban::default]",
+    "recipe[rdr_sudo_wrapper::default]",
+    "recipe[rdr_users_wrapper::default]",
     "recipe[apt::unattended-upgrades]",
     "recipe[ntp::default]",
-    "recipe[sudo::default]",
     "recipe[locale::default]",
-    "recipe[fail2ban::default]",
     "recipe[monit-tlq::default]",
     "recipe[monit_configs-tlq::system]"
   ],

@@ -1,33 +1,26 @@
 source "https://api.berkshelf.com"
 
-# cookbook 'apt', github: 'opscode-cookbooks/apt'
-cookbook 'apt-chef', '~> 1.0.0'
+cookbook 'apt', '~> 7.4.0'
 
-# cookbook 'fail2ban', github: 'opscode-cookbooks/fail2ban'
-cookbook 'fail2ban', '~> 2.3.0'
+cookbook 'fail2ban', '~> 6.3.2'
 
-# cookbook 'hostnames', github: 'nathantsoi/chef-cookbook-hostname'
 cookbook 'hostnames', '= 0.3.1'
 
 cookbook 'locale', '~> 1.1.0'
 
 cookbook 'memcached', '~> 6.1.0'
 
-#cookbook 'mysql', github: 'opscode-cookbooks/mysql'
 cookbook 'mysql', '~> 5.6.3'
 
 cookbook 'ntp', '~> 3.7.0'
 
-#cookbook 'openssh', github: 'opscode-cookbooks/openssh'
-cookbook 'openssh', '= 1.2.2'
+cookbook 'openssh', '~> 2.9.0'
 
 cookbook 'postgresql', '~> 8.2.1'
 
-# cookbook 'sudo', github: 'opscode-cookbooks/sudo'
-cookbook 'sudo', '~> 2.9.0'
+cookbook 'sudo', '~> 5.4.6'
 
 cookbook 'ufw', '~> 3.2.1'
-cookbook 'firewall', '~> 2.7.0'
 
 cookbook 'nginx', '~> 11.4.0'
 
