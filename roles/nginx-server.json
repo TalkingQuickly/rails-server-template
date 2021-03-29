@@ -4,7 +4,8 @@
   "default_attributes": {
     "firewall" : {
       "rules" : [
-        {"allow http on port 80" : {"port" : 80}}
+        {"allow http on port 80" : {"port" : 80}},
+        {"allow https on port 443" : {"port" : 443}}
       ]
     },
     "nginx" : {

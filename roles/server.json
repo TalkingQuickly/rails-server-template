@@ -61,7 +61,8 @@
     "recipe[ntp::default]",
     "recipe[locale::default]",
     "recipe[monit-tlq::default]",
-    "recipe[monit_configs-tlq::system]"
+    "recipe[monit_configs-tlq::system]",
+    "recipe[rdr_certbot::default]"
   ],
   "chef_type": "role",
   "override_attributes": {
